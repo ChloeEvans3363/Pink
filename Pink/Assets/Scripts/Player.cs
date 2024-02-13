@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     // Camera Movement
     public Camera camera;
-    public float sensitivity = 100f;
+    public float sensitivity = 30f;
     float xRotation = 0f;
     public float speed = 12f;
     private Vector2 cameraInput;
@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
+        // Move
         Vector3 move = transform.right * movementInput.x + transform.forward * movementInput.y;
 
         controller.Move(move * speed * Time.deltaTime);

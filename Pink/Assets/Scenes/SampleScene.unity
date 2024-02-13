@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 963194227}
-  sensitivity: 100
+  sensitivity: 30
   speed: 12
 --- !u!114 &1259313962
 MonoBehaviour:
@@ -655,6 +655,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d417912f-dc60-4fd4-822b-f624750a666f
     m_ActionName: Gameplay/CameraMove
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f550f47a-2ea9-4dfa-931e-54f7ce46d8dd
+    m_ActionName: Gameplay/Jump[/Keyboard/space,/DualSenseGamepadHID/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
