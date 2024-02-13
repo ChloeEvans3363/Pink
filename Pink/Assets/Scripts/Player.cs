@@ -67,9 +67,9 @@ public class Player : MonoBehaviour
 
         // Camera
         float cameraX = cameraInput.x * sensitivity * Time.deltaTime;
-        float cameray = cameraInput.y * sensitivity * Time.deltaTime;
+        float cameraY = cameraInput.y * sensitivity * Time.deltaTime;
 
-        xRotation -= cameray;
+        xRotation -= cameraY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
