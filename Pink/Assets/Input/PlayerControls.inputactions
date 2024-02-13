@@ -1,5 +1,5 @@
 {
-    "name": "Player",
+    "name": "PlayerControls",
     "maps": [
         {
             "name": "Gameplay",
@@ -16,12 +16,12 @@
                 },
                 {
                     "name": "CameraMove",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "d417912f-dc60-4fd4-822b-f624750a666f",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -93,8 +93,19 @@
                 },
                 {
                     "name": "",
-                    "id": "5103cc62-38c7-47d2-a990-de86888e188d",
-                    "path": "",
+                    "id": "8141c371-ece2-494f-b721-379a36b08d86",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CameraMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4eaa0006-1181-4392-ac5d-578ba2be7425",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
