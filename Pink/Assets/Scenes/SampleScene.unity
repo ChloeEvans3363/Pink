@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 552084022}
   - component: {fileID: 552084021}
   - component: {fileID: 552084020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 736595030}
   - component: {fileID: 736595029}
   - component: {fileID: 736595028}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ Transform:
   m_GameObject: {fileID: 736595027}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9137338, y: -2.38, z: 0.2689628}
+  m_LocalPosition: {x: -0.9137338, y: 0.17, z: 0.2689628}
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 1259313959}
   - component: {fileID: 1259313961}
   - component: {fileID: 1259313962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ Transform:
   m_GameObject: {fileID: 1259313958}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -595,9 +595,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5594a9a1979197c49ad248ef4b34ca4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 12
+  gravity: -9.81
+  groundRaidus: 0.24
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 128
   camera: {fileID: 963194227}
   sensitivity: 30
-  speed: 12
 --- !u!114 &1259313962
 MonoBehaviour:
   m_ObjectHideFlags: 0
