@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
         // Combat
-        if (reloadTimer <= 0 && Input.GetMouseButtonDown(0))
+        if (reloadTimer <= 0 && playerControls.Gameplay.Shoot.triggered)
         {
             GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, Quaternion.identity);
             bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward);
