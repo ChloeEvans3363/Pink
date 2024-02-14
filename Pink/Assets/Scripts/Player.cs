@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private float groundedOffset = 1.8f;
     private bool grounded;
     private float jumpHeight = 1.5f;
+    private bool jumped = false;
 
     // Camera Movement
     [SerializeField] private Camera camera;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     private float invincibilityTimer = 0;
     [SerializeField] private float reloadDuration = 2.0f;
     private float reloadTimer = 0;
+    private bool shoot = false;
 
     private void Awake()
     {
@@ -83,7 +85,7 @@ public class Player : MonoBehaviour
         camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(Vector3.up * cameraX);
 
-        if (playerControls.Gameplay.Jump.triggered && grounded)
+        if (jumped && grounded)
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
         // Gravity and Jumping
@@ -92,7 +94,7 @@ public class Player : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
         // Combat
-        if (reloadTimer <= 0 && playerControls.Gameplay.Shoot.triggered)
+        if (reloadTimer <= 0 && shoot)
         {
             GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, Quaternion.identity);
             bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward);
@@ -111,7 +113,17 @@ public class Player : MonoBehaviour
     {
         cameraInput = ctx.ReadValue<Vector2>();
     }
-    
+
+    public void OnJump(InputAction.CallbackContext ctx)
+    {
+        jumped = ctx.action.triggered;
+    }
+
+    public void OnShoot(InputAction.CallbackContext ctx)
+    {
+        shoot = ctx.action.triggered;
+    }
+
     public void TakeDamage(int damage)
     {
         if(invincibilityTimer > 0) { return; }

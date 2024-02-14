@@ -69,7 +69,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -80,7 +80,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -91,7 +91,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -102,7 +102,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -113,7 +113,7 @@
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -124,7 +124,7 @@
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "ScaleVector2(x=5,y=5)",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "CameraMove",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -135,7 +135,7 @@
                     "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "CameraMove",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -146,7 +146,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -157,7 +157,7 @@
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -168,7 +168,7 @@
                     "path": "<Keyboard>/anyKey",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Join",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -179,7 +179,7 @@
                     "path": "<Gamepad>/select",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Join",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -190,7 +190,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "KeyboardAndMouse",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -201,7 +201,7 @@
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false

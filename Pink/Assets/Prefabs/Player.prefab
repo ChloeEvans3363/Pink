@@ -83,6 +83,9 @@ MonoBehaviour:
   camera: {fileID: 7939007980706503191}
   sensitivity: 30
   bullet: {fileID: 7135911143341288173, guid: 923a341e11bfae3439fb583c1b191451, type: 3}
+  health: 2
+  invincibilityDuration: 1
+  reloadDuration: 2
 --- !u!114 &942493651985967002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,13 +144,41 @@ MonoBehaviour:
     m_ActionId: d417912f-dc60-4fd4-822b-f624750a666f
     m_ActionName: Gameplay/CameraMove
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8690846478744644694}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f550f47a-2ea9-4dfa-931e-54f7ce46d8dd
     m_ActionName: Gameplay/Jump[/Keyboard/space,/DualSenseGamepadHID/buttonSouth]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 0ab7a068-ea34-429f-a6aa-7e9a08fe030d
     m_ActionName: Gameplay/Join[/Keyboard/anyKey,/DualSenseGamepadHID/select]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8690846478744644694}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 74eb8a50-c0d3-487d-937c-8291ae7a474d
+    m_ActionName: Gameplay/Shoot[/Mouse/leftButton,/XInputControllerWindows/rightTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
