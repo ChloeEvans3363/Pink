@@ -82,6 +82,7 @@ MonoBehaviour:
     m_Bits: 128
   camera: {fileID: 7939007980706503191}
   sensitivity: 30
+  bullet: {fileID: 7135911143341288173, guid: 923a341e11bfae3439fb583c1b191451, type: 3}
 --- !u!114 &942493651985967002
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    // Platyer Movement
+    // Player Movement
     private CharacterController controller;
     private PlayerControls playerControls;
     private Vector2 movementInput;
@@ -25,6 +25,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float sensitivity = 30f;
     float xRotation = 0f;
     private Vector2 cameraInput;
+
+    //Combat
+    [SerializeField] public GameObject bullet;
+    [SerializeField] public int health = 2;
+    [SerializeField] private float invincibilityDuration = 1.0f;
+    private float invincibilityTimer = 0;
+    [SerializeField] private float reloadDuration = 2.0f;
+    private float reloadTimer = 0;
 
     private void Awake()
     {
@@ -82,6 +90,16 @@ public class Player : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        // Combat
+        if (reloadTimer <= 0 && Input.GetMouseButtonDown(0))
+        {
+            GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, Quaternion.identity);
+            bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward);
+            reloadTimer = reloadDuration;
+        }
+        invincibilityTimer -= Time.deltaTime;
+        reloadTimer -= Time.deltaTime;
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
@@ -92,5 +110,19 @@ public class Player : MonoBehaviour
     public void OnCameraMove(InputAction.CallbackContext ctx)
     {
         cameraInput = ctx.ReadValue<Vector2>();
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        if(invincibilityTimer > 0) { return; }
+        Debug.Log("Took " + damage + " damage");
+        health -= damage;
+        invincibilityTimer = invincibilityDuration;
+        if(health <= 0) { Die(); }
+    }
+
+    private void Die()
+    {
+
     }
 }
