@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     private UnityEngine.Vector2 movementInput;
     [SerializeField] private float speed = 12f;
     private float accelerate = 6f;
+    private float drop = 5f;
 
     // Gravity and Jumping
     private UnityEngine.Vector3 velocity;
@@ -97,11 +98,14 @@ public class Player : MonoBehaviour
         if (jumped && grounded)
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
+        if (grounded)
+            drop = 0.1f;
+        else
+            drop = 0;
+
         // Gravity and Jumping
         velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
-
+        
         // Combat
         if (reloadTimer <= 0 && shoot)
         {
@@ -112,9 +116,10 @@ public class Player : MonoBehaviour
         invincibilityTimer -= Time.deltaTime;
         reloadTimer -= Time.deltaTime;
 
+        // Movement
         applyAcceleration(move, speed, accelerate);
-
-        velocity = applyFriction(velocity, 2);
+        velocity = applyFriction(velocity, drop);
+        controller.Move(velocity * Time.deltaTime);
         Debug.Log(velocity);
     }
 
