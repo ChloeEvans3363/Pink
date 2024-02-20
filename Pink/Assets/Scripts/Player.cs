@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
         if (grounded)
-            drop = 0.1f;
+            drop = 5f;
         else
             drop = 0;
 
