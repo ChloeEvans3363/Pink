@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
     private PlayerControls playerControls;
     private UnityEngine.Vector2 movementInput;
     [SerializeField] private float speed = 12f;
+    private float accelerate = 6f;
 
     // Gravity and Jumping
     private UnityEngine.Vector3 velocity;
@@ -73,12 +75,14 @@ public class Player : MonoBehaviour
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
 
         if (grounded && velocity.y < 0)
-            velocity.y = -2f;
+            velocity.y = 0f;
 
         // Move
-        UnityEngine.Vector3 move = transform.right * movementInput.x + transform.forward * movementInput.y;
+        UnityEngine.Vector3 move = (transform.right * movementInput.x + transform.forward * movementInput.y).normalized;
 
-        controller.Move(move * speed * Time.deltaTime);
+        //controller.Move(move * speed * Time.deltaTime);
+
+
 
         // Camera
         float cameraX = cameraInput.x * sensitivity * Time.deltaTime;
@@ -107,6 +111,11 @@ public class Player : MonoBehaviour
         }
         invincibilityTimer -= Time.deltaTime;
         reloadTimer -= Time.deltaTime;
+
+        applyAcceleration(move, speed, accelerate);
+
+        velocity = applyFriction(velocity, 2);
+        //Debug.Log(velocity);
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
@@ -150,5 +159,58 @@ public class Player : MonoBehaviour
         Debug.Log("Player has died, respawning at "+newPos);
         transform.position = newPos;
         gameObject.SetActive(true);
+    }
+
+    // Credit to PhobicGunner for this code
+    private void applyAcceleration(UnityEngine.Vector3 wishDir, float wishSpeed, float acceleration)
+    {
+        float y = velocity.y;
+
+        float addSpeed, accelSpeed, currentSpeed;
+
+        UnityEngine.Vector3 flatVel = velocity;
+        flatVel.y = 0f;
+
+        currentSpeed = UnityEngine.Vector3.Dot(flatVel, wishDir);
+
+        addSpeed = wishSpeed - currentSpeed;
+
+        if (addSpeed <= 0f)
+            return;
+
+        accelSpeed = acceleration * wishSpeed;
+
+        if (accelSpeed > addSpeed)
+            accelSpeed = addSpeed;
+
+        velocity += accelSpeed * wishDir;
+
+        velocity.y = y;
+    }
+
+    // Credit to PhobicGunner for this code
+    private UnityEngine.Vector3 applyFriction(UnityEngine.Vector3 vel, float drop)
+    {
+        float y = vel.y;
+
+        vel.y = 0f;
+
+        float currentSpeed = vel.magnitude;
+
+        float newSpeed = currentSpeed - drop;
+
+        if(newSpeed < 0f)
+            newSpeed = 0f;
+
+        newSpeed /= currentSpeed;
+
+        if (float.IsNaN(newSpeed))
+            return UnityEngine.Vector3.up * y;
+
+        UnityEngine.Vector3 ret = vel * newSpeed;
+
+        ret.y = y;
+
+        return ret;
     }
 }
