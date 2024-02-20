@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
 
         if (grounded && velocity.y < 0)
-            velocity.y = 0f;
+            velocity.y = -2f;
 
         // Move
         UnityEngine.Vector3 move = (transform.right * movementInput.x + transform.forward * movementInput.y).normalized;
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         applyAcceleration(move, speed, accelerate);
 
         velocity = applyFriction(velocity, 2);
-        //Debug.Log(velocity);
+        Debug.Log(velocity);
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
