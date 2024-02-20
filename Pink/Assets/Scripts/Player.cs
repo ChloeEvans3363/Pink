@@ -78,12 +78,10 @@ public class Player : MonoBehaviour
         if (grounded && velocity.y < 0)
             velocity.y = -2f;
 
-        // Move
+        // Wishdir
         UnityEngine.Vector3 move = (transform.right * movementInput.x + transform.forward * movementInput.y).normalized;
 
         //controller.Move(move * speed * Time.deltaTime);
-
-
 
         // Camera
         float cameraX = cameraInput.x * sensitivity * Time.deltaTime;
