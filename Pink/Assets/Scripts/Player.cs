@@ -47,6 +47,26 @@ public class Player : MonoBehaviour
     private bool shoot = false;
     private GameObject[] spawnPoints;
 
+    // Get Sets
+    public bool Grounded
+    {
+        get { return grounded; }
+        set { grounded = value; }
+    }
+
+    public bool Jumped
+    {
+        get { return jumped; }
+        set { jumped = value; }
+    }
+
+    public float Jump
+    {
+        get { return jump; }
+        set { jump = value; }
+    }
+
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -98,7 +118,6 @@ public class Player : MonoBehaviour
         camera.transform.localRotation = UnityEngine.Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(UnityEngine.Vector3.up * cameraX);
 
-        
         // Combat
         if (reloadTimer <= 0 && shoot)
         {
@@ -117,7 +136,9 @@ public class Player : MonoBehaviour
 
             velocity = UnityEngine.Vector3.ProjectOnPlane(velocity, UnityEngine.Vector3.down);
             if (jumped)
+            {
                 velocity += -UnityEngine.Vector3.down * jump;
+            }
         }
         else
         {
