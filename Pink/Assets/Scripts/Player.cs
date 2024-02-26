@@ -15,12 +15,12 @@ public class Player : MonoBehaviour
     private float accelerate = 500.0f;
     private float friction = 15;
     private float minFriction = 0.5f;
-    private float maxSpeed = 8f;
+    [SerializeField] private float maxSpeed = 8f;
     private UnityEngine.Vector3 velocity;
 
     // Gravity and Jumping
-    [SerializeField] private float groundRaidus = 0.24f;
     [SerializeField] private LayerMask groundLayers;
+    private float groundRaidus = 0.24f;
     private float groundedOffset = 1.8f;
     private bool grounded;
     private bool jumped = false;
@@ -28,8 +28,8 @@ public class Player : MonoBehaviour
     private float airForwardAcceleration = 8f;
     private float airAccelCoeff = 1f;
     private float airDecelCoeff = 1.5f;
-    private float gravity = 24f;
-    private float jump = 8f;
+    [SerializeField] private float gravity = 24f;
+    [SerializeField] private float jump = 8f;
 
     // Camera Movement
     [SerializeField] private Camera camera;
