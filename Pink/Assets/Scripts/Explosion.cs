@@ -12,6 +12,9 @@ public class Explosion : MonoBehaviour
     [SerializeField] private GameObject explosion;
     [SerializeField] public float outerRadius = 10f;
 
+    // Rocket Jump
+    [SerializeField] public float explosionForce = 60f;
+
     //[SerializeField] private LayerMask groundLayers;
     //private Rigidbody rigidbody;
 
@@ -50,6 +53,7 @@ public class Explosion : MonoBehaviour
         if(dist <= outerRadius/2)
         {
             other.gameObject.GetComponent<Player>().TakeDamage(2);
+            //other.gameObject.GetComponent<Player>().AddExplosionForce(transform.position, outerRadius, explosionForce);
         }
         else
         {

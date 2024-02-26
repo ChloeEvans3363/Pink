@@ -66,6 +66,12 @@ public class Player : MonoBehaviour
         set { jump = value; }
     }
 
+    public UnityEngine.Vector3 Velocity
+    {
+        get { return velocity; }
+        set { velocity = value; }
+    }
+
 
     private void Awake()
     {
@@ -288,5 +294,18 @@ public class Player : MonoBehaviour
                 + UnityEngine.Vector3.up * (UnityEngine.Vector3.Dot(velocity, UnityEngine.Vector3.up));
         }
 
+    }
+
+    // Credit to PhobicGunner for this
+    public void AddExplosionForce(UnityEngine.Vector3 position, float radius, float force)
+    {
+        UnityEngine.Vector3 explosionVector = transform.position - position;
+        float distance = explosionVector.magnitude;
+
+        if (distance > radius)
+            return;
+        float forceMulti = 1f - (distance/radius);
+        explosionVector /= distance;
+        velocity += explosionVector * force * forceMulti;
     }
 }
