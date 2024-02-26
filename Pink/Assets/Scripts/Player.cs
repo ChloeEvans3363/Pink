@@ -104,7 +104,7 @@ public class Player : MonoBehaviour
         float time = Time.deltaTime;
         UnityEngine.Vector3 spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
             transform.position.z);
-
+        
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
 
         if (grounded && velocity.y < 0)

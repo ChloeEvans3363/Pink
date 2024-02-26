@@ -16,7 +16,6 @@ public class JumpPad : MonoBehaviour
         other.gameObject.GetComponent<Player>().Jumped = true;
         playerJump = other.gameObject.GetComponent<Player>().Jump;
         other.gameObject.GetComponent<Player>().Jump = jump;
-        Debug.Log("jump pad");
     }
 
     private void OnTriggerExit(Collider other)
