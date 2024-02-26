@@ -11141,6 +11141,10 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 8690846478744644694, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
+      propertyPath: groundLayers.m_Bits
+      value: 129
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

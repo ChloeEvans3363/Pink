@@ -124,6 +124,8 @@ public class Player : MonoBehaviour
         camera.transform.localRotation = UnityEngine.Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(UnityEngine.Vector3.up * cameraX);
 
+        //Debug.Log(jump);
+
         // Combat
         if (reloadTimer <= 0 && shoot)
         {
