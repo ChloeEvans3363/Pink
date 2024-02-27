@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     private float airDecelCoeff = 1.5f;
     [SerializeField] private float gravity = 24f;
     [SerializeField] private float jump = 8f;
+    UnityEngine.Vector3 spherePosition;
 
     // Camera Movement
     [SerializeField] private Camera camera;
@@ -102,7 +103,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         float time = Time.deltaTime;
-        UnityEngine.Vector3 spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
+        spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
             transform.position.z);
         
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);

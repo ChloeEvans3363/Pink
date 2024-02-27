@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4435267080573067600}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.57177, y: -20.65, z: 97.67595}
+  m_LocalPosition: {x: -28.57177, y: -20.65, z: 62.74}
   m_LocalScale: {x: 5.136628, y: 0.4784277, z: 5.136628}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -104,8 +104,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.2692158, z: 1}
-  m_Center: {x: 0, y: 0.63460916, z: 0}
+  m_Size: {x: 1, y: 3.9846356, z: 1}
+  m_Center: {x: 0, y: 1.4923207, z: 0}
 --- !u!114 &2106918161144042981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,4 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b717065833d845f43bb327ec467166b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 40
+  jump: 45
