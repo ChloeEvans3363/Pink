@@ -15,7 +15,7 @@ public class JumpPad : MonoBehaviour
         playerJump = other.gameObject.GetComponent<Player>().Jump;
         other.gameObject.GetComponent<Player>().Jump = jump;
 
-        if (other.gameObject.GetComponent<Player>().JustJumped)
+        if (other.gameObject.GetComponent<Player>().Jumped)
             other.gameObject.GetComponent<Player>().Jump += 15;
 
         other.gameObject.GetComponent<Player>().Jumped = true;
