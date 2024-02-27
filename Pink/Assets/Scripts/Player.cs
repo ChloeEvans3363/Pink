@@ -30,7 +30,6 @@ public class Player : MonoBehaviour
     private float airDecelCoeff = 1.5f;
     [SerializeField] private float gravity = 24f;
     [SerializeField] private float jump = 8f;
-    UnityEngine.Vector3 spherePosition;
 
     // Camera Movement
     [SerializeField] private Camera camera;
@@ -103,7 +102,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         float time = Time.deltaTime;
-        spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
+        UnityEngine.Vector3 spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
             transform.position.z);
         
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
@@ -124,8 +123,6 @@ public class Player : MonoBehaviour
 
         camera.transform.localRotation = UnityEngine.Quaternion.Euler(xRotation, 0f, 0f);
         transform.Rotate(UnityEngine.Vector3.up * cameraX);
-
-        //Debug.Log(jump);
 
         // Combat
         if (reloadTimer <= 0 && shoot)

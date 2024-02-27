@@ -11,7 +11,7 @@ public class JumpPad : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player") { return; }
-        Debug.Log(other.gameObject.GetComponent<Player>().Grounded);
+        Debug.Log(other.gameObject.GetComponent<Player>().Jumped);
         other.gameObject.GetComponent<Player>().Grounded = false;
         playerJump = other.gameObject.GetComponent<Player>().Jump;
         other.gameObject.GetComponent<Player>().Jump = jump;
