@@ -11,14 +11,15 @@ public class JumpPad : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player") { return; }
-        other.gameObject.GetComponent<Player>().Grounded = true;
+
         playerJump = other.gameObject.GetComponent<Player>().Jump;
         other.gameObject.GetComponent<Player>().Jump = jump;
 
-        if (other.gameObject.GetComponent<Player>().Jumped)
+        if (other.gameObject.GetComponent<Player>().JustJumped)
             other.gameObject.GetComponent<Player>().Jump += 15;
 
-            other.gameObject.GetComponent<Player>().Jumped = true;
+        other.gameObject.GetComponent<Player>().Jumped = true;
+        other.gameObject.GetComponent<Player>().Grounded = true;
 
     }
 

@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     private float airDecelCoeff = 1.5f;
     [SerializeField] private float gravity = 24f;
     [SerializeField] private float jump = 8f;
+    private bool justJumped = false;
 
     // Camera Movement
     [SerializeField] private Camera camera;
@@ -58,6 +59,11 @@ public class Player : MonoBehaviour
     {
         get { return jumped; }
         set { jumped = value; }
+    }
+
+    public bool JustJumped
+    {
+        get { return justJumped;  }
     }
 
     public float Jump
@@ -101,6 +107,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(justJumped);
         float time = Time.deltaTime;
         UnityEngine.Vector3 spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
             transform.position.z);
@@ -140,6 +147,8 @@ public class Player : MonoBehaviour
             ApplyFriction(time);
             ApplyAcceleration(wishdir, accelerate, time);
 
+            justJumped = false;
+
             velocity = UnityEngine.Vector3.ProjectOnPlane(velocity, UnityEngine.Vector3.down);
             if (jumped)
             {
@@ -178,6 +187,7 @@ public class Player : MonoBehaviour
     public void OnJump(InputAction.CallbackContext ctx)
     {
         jumped = ctx.action.triggered;
+        justJumped = true;
     }
 
     public void OnShoot(InputAction.CallbackContext ctx)
