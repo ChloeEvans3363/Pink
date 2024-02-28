@@ -11077,16 +11077,8 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 571210122545191509, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2170273443275068366, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2170273443275068366, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6349546250622227739, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
@@ -11128,22 +11120,6 @@ PrefabInstance:
     - target: {fileID: 6349546250622227739, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8690846478744644694, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
-      propertyPath: jump
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8690846478744644694, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
-      propertyPath: gravity
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8690846478744644694, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
-      propertyPath: maxSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8690846478744644694, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
-      propertyPath: groundLayers.m_Bits
-      value: 129
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

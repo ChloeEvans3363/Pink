@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 942493651985967002}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2170273443275068366}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.99, z: 0}
+  m_LocalPosition: {x: 0, y: 21.74, z: -47.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -74,12 +74,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5594a9a1979197c49ad248ef4b34ca4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  gravity: -9.81
-  groundRaidus: 0.24
+  maxSpeed: 15
   groundLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 129
+  gravity: 35
+  jump: 15
   camera: {fileID: 7939007980706503191}
   sensitivity: 30
   bullet: {fileID: 7135911143341288173, guid: 923a341e11bfae3439fb583c1b191451, type: 3}
