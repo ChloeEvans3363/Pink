@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class JumpPad : MonoBehaviour
 {
-    [SerializeField] private float jump = 40;
+    [SerializeField] private float jump = 60;
     private float playerJump;
 
     private void OnTriggerEnter(Collider other)
@@ -14,9 +14,6 @@ public class JumpPad : MonoBehaviour
 
         playerJump = other.gameObject.GetComponent<Player>().Jump;
         other.gameObject.GetComponent<Player>().Jump = jump;
-
-        if (other.gameObject.GetComponent<Player>().Jumped)
-            other.gameObject.GetComponent<Player>().Jump += playerJump;
 
         other.gameObject.GetComponent<Player>().Jumped = true;
         other.gameObject.GetComponent<Player>().Grounded = true;
