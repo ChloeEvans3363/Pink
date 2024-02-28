@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     float xRotation = 0f;
     private UnityEngine.Vector2 cameraInput;
 
-    //Combat
+    // Combat
     [SerializeField] public GameObject bullet;
     private int health = 2;
     [SerializeField] private float invincibilityDuration = 1.0f;
@@ -46,6 +46,12 @@ public class Player : MonoBehaviour
     private float reloadTimer = 0;
     private bool shoot = false;
     private GameObject[] spawnPoints;
+
+    // Scoring
+    [SerializeField] const int winScore = 10;
+    [SerializeField] const float endTime = 10.0f * 60.0f;
+    private float elapsedTime = 0.0f;
+    public int score = 0;
 
     // Get Sets
     public bool Grounded
@@ -102,6 +108,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         float time = Time.deltaTime;
+        elapsedTime += time;
         UnityEngine.Vector3 spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
             transform.position.z);
         
@@ -133,6 +140,22 @@ public class Player : MonoBehaviour
         }
         invincibilityTimer -= Time.deltaTime;
         reloadTimer -= Time.deltaTime;
+
+        // End Game
+        if(elapsedTime >= endTime || score >= winScore)
+        {
+            //GameObject.FindObjectsOfType(typeof(MonoBehaviour)); //returns Object[]
+            //GameObject.FindGameObjectsWithTag("Untagged");  //returns GameObject[]
+            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+            foreach (GameObject player in players)
+            {
+                if (!player.activeInHierarchy) { continue; }
+                player.GetComponent<Player>().score = 0;
+                player.GetComponent<Player>().elapsedTime = 0.0f;
+                player.GetComponent<Player>().Respawn();
+            }
+        }
 
         // Movement
         if (grounded)
@@ -206,6 +229,7 @@ public class Player : MonoBehaviour
         Debug.Log("Took " + damage + " damage. Has " + this.health + " health left.");
         invincibilityTimer = invincibilityDuration;
         if(this.health <= 0) {
+            explosion.GetComponent<Explosion>().owner.GetComponent<Player>().score++;
             Respawn();
             return true;
         }
