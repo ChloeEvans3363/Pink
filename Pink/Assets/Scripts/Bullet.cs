@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed = 20f;
     [SerializeField] private float range = 100f;
     private float distance = 0f;
+    private GameObject owner = null;
 
     // Explosion
     [SerializeField] private GameObject explosion;
@@ -40,8 +41,9 @@ public class Bullet : MonoBehaviour
 
     }
 
-    public void Shoot(Vector3 _direction)
+    public void Shoot(Vector3 _direction, GameObject _owner)
     {
+        owner = _owner;
         direction = _direction;
     }
 
@@ -69,6 +71,7 @@ public class Bullet : MonoBehaviour
         GameObject explosionObj = Instantiate(explosion, this.transform.position, Quaternion.identity);
         explosionObj.transform.localScale = new Vector3(outerRadius, outerRadius, outerRadius);
         explosionObj.GetComponent<Explosion>().outerRadius = outerRadius;
+        explosionObj.GetComponent<Explosion>().owner = this.owner;
         Destroy(this.gameObject);
     }
 

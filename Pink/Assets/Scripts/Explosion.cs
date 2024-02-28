@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] private float lifeTime = 5f;
+    [SerializeField] private float lifeTime = 0.5f;
+    public GameObject owner = null;
 
     // Explosion
     [SerializeField] private GameObject explosion;
@@ -52,12 +53,12 @@ public class Explosion : MonoBehaviour
         //Debug.Log("Explosion has triggered with " + other.gameObject + " " + dist + " ft away");
         if(dist <= outerRadius/2)
         {
-            other.gameObject.GetComponent<Player>().TakeDamage(2);
+            other.gameObject.GetComponent<Player>().TakeDamage(2, this.gameObject);
             //other.gameObject.GetComponent<Player>().AddExplosionForce(transform.position, outerRadius, explosionForce);
         }
         else
         {
-            other.gameObject.GetComponent<Player>().TakeDamage(1);
+            other.gameObject.GetComponent<Player>().TakeDamage(1, this.gameObject);
         }
     }
 

@@ -128,7 +128,7 @@ public class Player : MonoBehaviour
         if (reloadTimer <= 0 && shoot)
         {
             GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
-            bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward);
+            bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);
             reloadTimer = reloadDuration;
         }
         invincibilityTimer -= Time.deltaTime;
@@ -185,9 +185,23 @@ public class Player : MonoBehaviour
         shoot = ctx.action.triggered;
     }
 
-    public bool TakeDamage(int damage)
+    public bool TakeDamage(int damage, GameObject explosion)
     {
-        if(invincibilityTimer > 0) { return false; }
+        // If shooting self
+        if (explosion.GetComponent<Explosion>().owner.Equals(this.gameObject))
+        {
+            AddExplosionForce(explosion.transform.position,
+                explosion.GetComponent<Explosion>().outerRadius,
+                explosion.GetComponent<Explosion>().explosionForce);
+
+            Debug.Log("Player got pushed back");
+            return false;
+        }
+
+        // If player has iFrames, do nothing
+        if (invincibilityTimer > 0) { return false; }
+
+        // If another player has shot them, take damage
         this.health -= damage;
         Debug.Log("Took " + damage + " damage. Has " + this.health + " health left.");
         invincibilityTimer = invincibilityDuration;
