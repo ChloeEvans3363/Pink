@@ -11077,6 +11077,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 942493651985967002, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Gamepad
+      objectReference: {fileID: 0}
     - target: {fileID: 2170273443275068366, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
       propertyPath: m_Name
       value: Player
