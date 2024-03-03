@@ -11079,6 +11079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1755797336}
   - component: {fileID: 1755797335}
+  - component: {fileID: 1755797337}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -11104,7 +11105,19 @@ MonoBehaviour:
   m_JoinBehavior: 1
   m_PlayerJoinedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1755797337}
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+        m_MethodName: OnPlayerJoined
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_PlayerLeftEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -11145,6 +11158,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1755797337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755797334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7d4a25367756847b4112972781c1c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: {fileID: 2170273443275068366, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
+  player2: {fileID: 2170273443275068366, guid: 112a85f9d8c5c6048aa6becc509922ee, type: 3}
+  player3: {fileID: 2170273443275068366, guid: 66975ee5b3f6f8d499eeaf53f7e09661, type: 3}
+  player4: {fileID: 2170273443275068366, guid: e9865d97fdd54e947bad13de6a72b486, type: 3}
 --- !u!1001 &1759202134
 PrefabInstance:
   m_ObjectHideFlags: 0
