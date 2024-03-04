@@ -4,7 +4,9 @@ using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -48,10 +50,22 @@ public class Player : MonoBehaviour
     private GameObject[] spawnPoints;
 
     // Scoring
-    [SerializeField] const int winScore = 10;
+    [SerializeField] const int winScore = 2;
     [SerializeField] const float endTime = 10.0f * 60.0f;
     private float elapsedTime = 0.0f;
     public int score = 0;
+
+    // Winning & Respawn
+    [SerializeField] private Transform gameCanvas;
+    [SerializeField] private GameObject respawnScreen;
+    [SerializeField] private TMP_Text countdownText;
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private TMP_Text winText;
+    [SerializeField] private float respawnTime = 3f;
+    private float currentRespawnTime = 0f;
+    private bool isRespawning = false;
+    private int winningPlayerIndex;
+
 
     // Get Sets
     public bool Grounded
@@ -101,7 +115,16 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+
+
         spawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
+
+        gameCanvas = GameObject.FindObjectOfType<Canvas>().GetComponent<Transform>();
+        
+        respawnScreen = gameCanvas.GetChild(0).gameObject;
+        countdownText = gameCanvas.GetChild(0).GetChild(3).gameObject.GetComponent<TMP_Text>();
+        winScreen = gameCanvas.GetChild(1).gameObject;
+        winText = gameCanvas.GetChild(1).GetChild(1).gameObject.GetComponent<TMP_Text>();
     }
 
     // Update is called once per frame
@@ -148,13 +171,22 @@ public class Player : MonoBehaviour
             //GameObject.FindGameObjectsWithTag("Untagged");  //returns GameObject[]
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-            foreach (GameObject player in players)
+            for (int i = 0; i < players.Length; i++)
             {
-                if (!player.activeInHierarchy) { continue; }
-                player.GetComponent<Player>().score = 0;
-                player.GetComponent<Player>().elapsedTime = 0.0f;
-                player.GetComponent<Player>().Respawn();
+                GameObject player = players[i];
+                if (!player.activeInHierarchy) continue;
+                if (player.GetComponent<Player>().score >= winScore)
+                {
+                    winningPlayerIndex = i;
+                    break;
+                }
             }
+
+            winText.text = "PLAYER " + winningPlayerIndex + " WINS!";
+            winScreen.SetActive(true);
+
+            // Load Main Menu after Game Ends
+            StartCoroutine(LoadMenuAfterDelay());
         }
 
         // Movement
@@ -183,7 +215,21 @@ public class Player : MonoBehaviour
 
             velocity += UnityEngine.Vector3.down * (gravity * time);
         }
-        
+
+        if (isRespawning)
+        {
+            currentRespawnTime -= Time.deltaTime;
+            int seconds = Mathf.CeilToInt(currentRespawnTime);
+            countdownText.SetText(seconds.ToString());
+
+            if (currentRespawnTime <= 0f)
+            {
+                Respawn();
+                respawnScreen.SetActive(false);
+                isRespawning = false;
+                countdownText.SetText("");
+            }
+        }
 
         controller.Move(velocity * Time.deltaTime);
     }
@@ -230,7 +276,9 @@ public class Player : MonoBehaviour
         invincibilityTimer = invincibilityDuration;
         if(this.health <= 0) {
             explosion.GetComponent<Explosion>().owner.GetComponent<Player>().score++;
-            Respawn();
+            respawnScreen.SetActive(true);
+            currentRespawnTime = respawnTime;
+            isRespawning = true;
             return true;
         }
         return false;
@@ -345,5 +393,13 @@ public class Player : MonoBehaviour
         float forceMulti = 1f - (distance/radius);
         explosionVector /= distance;
         velocity += explosionVector * force * forceMulti;
+    }
+
+    private IEnumerator LoadMenuAfterDelay()
+    {
+        // Wait for 5 seconds
+        yield return new WaitForSeconds(5f);
+        // Load the Menu scene
+        SceneManager.LoadScene("Menu");
     }
 }
