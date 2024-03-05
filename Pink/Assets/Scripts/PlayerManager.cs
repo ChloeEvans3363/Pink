@@ -13,6 +13,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject player4;
     private GameObject[] playerList;
 
+    public Canvas playerUI;
+
+
     private void OnEnable() 
     {
         playerInputManger = GetComponent<PlayerInputManager>();
@@ -22,5 +25,6 @@ public class PlayerManager : MonoBehaviour
     public void OnPlayerJoined(PlayerInput playerInput)
     {
         playerInputManger.playerPrefab = playerList[playerInputManger.playerCount];
+
     }
 }

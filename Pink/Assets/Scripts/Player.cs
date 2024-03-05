@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
     // Combat
     [SerializeField] public GameObject bullet;
-    private int health = 2;
+    private int health = 1;
     [SerializeField] private float invincibilityDuration = 1.0f;
     private float invincibilityTimer = 0;
     [SerializeField] private float reloadDuration = 2.0f;
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     private GameObject[] spawnPoints;
 
     // Scoring
-    [SerializeField] const int winScore = 2;
+    [SerializeField] const int winScore = 10;
     [SerializeField] const float endTime = 10.0f * 60.0f;
     private float elapsedTime = 0.0f;
     public int score = 0;
@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
         transform.Rotate(UnityEngine.Vector3.up * cameraX);
 
         // Combat
-        if (reloadTimer <= 0 && shoot)
+        if (reloadTimer <= 0 && shoot && !isRespawning)
         {
             GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
             bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);
@@ -222,9 +222,14 @@ public class Player : MonoBehaviour
             int seconds = Mathf.CeilToInt(currentRespawnTime);
             countdownText.SetText(seconds.ToString());
 
+            // Hide Body
+            this.transform.GetChild(0).gameObject.SetActive(false);
+
             if (currentRespawnTime <= 0f)
             {
                 Respawn();
+                this.transform.GetChild(0).gameObject.SetActive(true);
+                playerControls.Enable();
                 respawnScreen.SetActive(false);
                 isRespawning = false;
                 countdownText.SetText("");
