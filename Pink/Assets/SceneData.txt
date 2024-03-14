@@ -1,0 +1,390 @@
+SpawnPoint (3): 
+      MeshName=SpawnPoint (3)
+      Position=(-27.20, 3.00, 33.20), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 0.19, 1.00)
+
+Body: 
+      MeshName=Capsule Instance
+      Position=(0.00, 21.74, -47.55), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.20, 1.80, 1.20)
+
+JumpPad: 
+      MeshName=Cube Instance
+      Position=(-5.18, 1.96, 13.79), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(5.14, 0.48, 5.14)
+
+SpawnPoint: 
+      MeshName=SpawnPoint
+      Position=(29.10, 3.00, 31.60), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 0.19, 1.00)
+
+SpawnPoint (2): 
+      MeshName=SpawnPoint (2)
+      Position=(-25.81, 3.00, -30.56), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 0.19, 1.00)
+
+SpawnPoint (1): 
+      MeshName=SpawnPoint (1)
+      Position=(29.50, 3.00, -30.60), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 0.19, 1.00)
+
+RoomCorner (2): 
+      MeshName=Cube Instance
+      Position=(-32.10, 1.70, -27.20), 
+      Rotation=(0.35355, 0.61237, 0.61237, -0.35355), 
+      Scale=(62.88, 62.88, 62.88)
+
+silo_window (1): 
+      MeshName=Silo second floor Instance
+      Position=(-5.49, 21.02, 13.34), 
+      Rotation=(-0.27055, 0.65317, 0.65340, 0.27065), 
+      Scale=(100.00, 100.00, 100.00)
+
+HayBale: 
+      MeshName=Cube Instance
+      Position=(-20.17, 3.11, 51.31), 
+      Rotation=(-0.34512, -0.61716, -0.61716, 0.34512), 
+      Scale=(100.00, 100.00, 100.00)
+
+RoomCorner (17): 
+      MeshName=Cube Instance
+      Position=(-35.11, 1.71, 48.86), 
+      Rotation=(0.20501, -0.67674, -0.67674, -0.20501), 
+      Scale=(62.88, 62.88, 62.88)
+
+silo_top (2): 
+      MeshName=Silo top Instance
+      Position=(-5.56, 46.97, 13.30), 
+      Rotation=(0.49991, 0.49991, 0.50009, -0.50009), 
+      Scale=(100.00, 100.00, 100.00)
+
+silo_wall: 
+      MeshName=Silo base.001 Instance
+      Position=(-5.54, 11.29, 13.34), 
+      Rotation=(-0.70711, 0.00000, 0.00000, 0.70711), 
+      Scale=(100.00, 100.00, 100.00)
+
+Ground: 
+      MeshName=pb_Mesh-11292 Instance
+      Position=(-53.80, 0.71, -42.30), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+silo_top (3): 
+      MeshName=Silo top Instance
+      Position=(-5.56, 46.97, 13.30), 
+      Rotation=(0.00000, 0.70698, 0.70723, 0.00000), 
+      Scale=(100.00, 100.00, 100.00)
+
+RoomCorner (4): 
+      MeshName=Cube Instance
+      Position=(-32.18, 1.70, -27.06), 
+      Rotation=(0.61237, -0.35355, -0.35355, -0.61237), 
+      Scale=(62.88, -62.88, 62.88)
+
+silo_top: 
+      MeshName=Silo top Instance
+      Position=(-5.56, 46.97, 13.30), 
+      Rotation=(-0.70711, 0.00000, 0.00000, 0.70711), 
+      Scale=(100.00, 100.00, 100.00)
+
+Wall (15): 
+      MeshName=pb_Mesh-22250(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) Instance
+      Position=(61.70, 19.75, 66.10), 
+      Rotation=(0.00000, 0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+BentBalcony (3): 
+      MeshName=Plane Instance
+      Position=(-20.31, 34.20, 28.15), 
+      Rotation=(0.65335, 0.27044, 0.27044, -0.65335), 
+      Scale=(100.00, 100.00, 100.00)
+
+Wall (8): 
+      MeshName=pb_Mesh-45784(Clone) Instance
+      Position=(-53.60, 19.75, -6.65), 
+      Rotation=(0.00000, -0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+Wall (9): 
+      MeshName=pb_Mesh-45784(Clone)(Clone) Instance
+      Position=(-53.60, 19.75, -77.65), 
+      Rotation=(0.00000, -0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+silo_base (2): 
+      MeshName=Silo base Instance
+      Position=(-5.56, 1.58, 13.31), 
+      Rotation=(0.00000, 0.70711, 0.70711, 0.00000), 
+      Scale=(100.00, 100.00, 100.00)
+
+Wall (13): 
+      MeshName=pb_Mesh-22250(Clone)(Clone)(Clone)(Clone)(Clone) Instance
+      Position=(-53.60, 19.75, -58.90), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+RoomCorner (6): 
+      MeshName=Cube Instance
+      Position=(-32.18, 1.70, -27.06), 
+      Rotation=(0.61237, -0.35355, -0.35355, -0.61237), 
+      Scale=(-62.88, 62.88, 62.88)
+
+Wall (5): 
+      MeshName=pb_Mesh-22250(Clone)(Clone)(Clone) Instance
+      Position=(-87.85, 19.75, 65.60), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+BentBalcony (1): 
+      MeshName=Plane Instance
+      Position=(9.40, 34.20, -1.60), 
+      Rotation=(-0.27503, 0.65143, 0.65143, 0.27503), 
+      Scale=(100.00, 100.00, 100.00)
+
+silo_window (3): 
+      MeshName=Silo second floor Instance
+      Position=(-5.49, 21.02, 13.34), 
+      Rotation=(0.65317, 0.27055, 0.27065, -0.65340), 
+      Scale=(100.00, 100.00, 100.00)
+
+Wall (10): 
+      MeshName=pb_Mesh-45784(Clone)(Clone) Instance
+      Position=(61.90, 19.75, -6.65), 
+      Rotation=(0.00000, -0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+Wall (6): 
+      MeshName=pb_Mesh-45794 Instance
+      Position=(-18.00, 19.75, -50.65), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+BentBalcony: 
+      MeshName=Plane Instance
+      Position=(9.03, 34.20, 28.06), 
+      Rotation=(-0.65510, 0.26616, 0.26616, 0.65510), 
+      Scale=(100.00, 100.00, 100.00)
+
+silo_window: 
+      MeshName=Silo second floor Instance
+      Position=(-5.49, 21.02, 13.34), 
+      Rotation=(-0.65317, 0.27055, 0.27065, 0.65340), 
+      Scale=(100.00, 100.00, 100.00)
+
+Wall (3): 
+      MeshName=pb_Mesh-22250(Clone)(Clone)(Clone) Instance
+      Position=(54.52, 1.75, -6.80), 
+      Rotation=(0.00000, -0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+silo_base (1): 
+      MeshName=Silo base Instance
+      Position=(-5.56, 1.58, 13.31), 
+      Rotation=(-0.50000, 0.50000, 0.50000, 0.50000), 
+      Scale=(100.00, 100.00, 100.00)
+
+Cube (1): 
+      MeshName=pb_Mesh-28856(Clone) Instance
+      Position=(0.67, 18.80, 72.73), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+RoomCorner (7): 
+      MeshName=Cube Instance
+      Position=(33.29, 1.71, -25.85), 
+      Rotation=(0.67231, 0.21910, 0.21910, -0.67231), 
+      Scale=(62.88, 62.88, 62.88)
+
+Wall: 
+      MeshName=pb_Mesh-22250 Instance
+      Position=(-18.00, 1.75, -43.29), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+Cube: 
+      MeshName=pb_Mesh-28856 Instance
+      Position=(0.67, 18.80, -43.29), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+silo_wall (2): 
+      MeshName=Silo base.001 Instance
+      Position=(-5.54, 11.29, 13.34), 
+      Rotation=(0.00000, 0.70698, 0.70723, 0.00000), 
+      Scale=(100.00, 100.00, 100.00)
+
+RoomCorner (8): 
+      MeshName=Cube Instance
+      Position=(33.40, 1.71, -25.74), 
+      Rotation=(0.21910, -0.67230, -0.67231, -0.21910), 
+      Scale=(62.88, -62.88, 62.88)
+
+silo_window (2): 
+      MeshName=Silo second floor Instance
+      Position=(-5.49, 21.02, 13.34), 
+      Rotation=(0.27055, 0.65317, 0.65340, -0.27065), 
+      Scale=(100.00, 100.00, 100.00)
+
+Wall (14): 
+      MeshName=pb_Mesh-22250(Clone)(Clone)(Clone)(Clone)(Clone)(Clone) Instance
+      Position=(-69.55, 19.75, 66.10), 
+      Rotation=(0.00000, 0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+HayBale (1): 
+      MeshName=Cube Instance
+      Position=(-21.97, 6.43, 50.26), 
+      Rotation=(0.07945, -0.83258, 0.05404, 0.54550), 
+      Scale=(100.00, 100.00, 100.00)
+
+RoomCorner (11): 
+      MeshName=Cube Instance
+      Position=(33.58, 1.71, 49.02), 
+      Rotation=(0.67016, -0.22559, -0.22559, -0.67016), 
+      Scale=(62.88, 62.88, 62.88)
+
+RoomCorner (16): 
+      MeshName=Cube Instance
+      Position=(-35.11, 1.71, 48.86), 
+      Rotation=(0.20501, -0.67674, -0.67674, -0.20501), 
+      Scale=(62.88, -62.88, 62.88)
+
+Wall (2): 
+      MeshName=pb_Mesh-22250(Clone)(Clone) Instance
+      Position=(-53.73, 1.75, -6.80), 
+      Rotation=(0.00000, -0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+silo_wall (1): 
+      MeshName=Silo base.001 Instance
+      Position=(-5.54, 11.29, 13.34), 
+      Rotation=(-0.49991, 0.49991, 0.50009, 0.50009), 
+      Scale=(100.00, 100.00, 100.00)
+
+RoomCorner (14): 
+      MeshName=Cube Instance
+      Position=(33.62, 1.71, 48.90), 
+      Rotation=(-0.22559, -0.67016, -0.67016, 0.22559), 
+      Scale=(-62.88, 62.88, 62.88)
+
+Wall (12): 
+      MeshName=pb_Mesh-22250(Clone)(Clone)(Clone)(Clone) Instance
+      Position=(-53.60, 19.75, 73.60), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+RoomCorner (10): 
+      MeshName=Cube Instance
+      Position=(33.22, 1.71, -25.70), 
+      Rotation=(0.21910, -0.67230, -0.67231, -0.21910), 
+      Scale=(-62.88, 62.88, 62.88)
+
+RoomCorner (9): 
+      MeshName=Cube Instance
+      Position=(33.40, 1.71, -25.74), 
+      Rotation=(0.21910, -0.67230, -0.67231, -0.21910), 
+      Scale=(62.88, 62.88, 62.88)
+
+silo_base: 
+      MeshName=Silo base Instance
+      Position=(-5.56, 1.58, 13.31), 
+      Rotation=(-0.70711, 0.00000, 0.00000, 0.70711), 
+      Scale=(100.00, 100.00, 100.00)
+
+silo_wall (3): 
+      MeshName=Silo base.001 Instance
+      Position=(-5.54, 11.29, 13.34), 
+      Rotation=(0.49991, 0.49991, 0.50009, -0.50009), 
+      Scale=(100.00, 100.00, 100.00)
+
+silo_top (1): 
+      MeshName=Silo top Instance
+      Position=(-5.56, 46.97, 13.30), 
+      Rotation=(-0.49991, 0.49991, 0.50009, 0.50009), 
+      Scale=(100.00, 100.00, 100.00)
+
+silo_base (3): 
+      MeshName=Silo base Instance
+      Position=(-5.56, 1.58, 13.31), 
+      Rotation=(0.50000, 0.50000, 0.50000, -0.50000), 
+      Scale=(100.00, 100.00, 100.00)
+
+RoomCorner (13): 
+      MeshName=Cube Instance
+      Position=(33.80, 1.71, 48.86), 
+      Rotation=(-0.22559, -0.67016, -0.67016, 0.22559), 
+      Scale=(62.88, 62.88, 62.88)
+
+RoomCorner (15): 
+      MeshName=Cube Instance
+      Position=(-35.22, 1.71, 48.75), 
+      Rotation=(0.67673, 0.20501, 0.20501, -0.67674), 
+      Scale=(62.88, 62.88, 62.88)
+
+Cube (2): 
+      MeshName=pb_Mesh-28856(Clone)(Clone) Instance
+      Position=(-61.05, 18.80, 10.70), 
+      Rotation=(0.00000, -0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+Cube (3): 
+      MeshName=pb_Mesh-28856(Clone)(Clone)(Clone) Instance
+      Position=(54.54, 18.80, 10.70), 
+      Rotation=(0.00000, -0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+Wall (7): 
+      MeshName=pb_Mesh-45784 Instance
+      Position=(-87.85, 19.75, -50.65), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+BentBalcony (2): 
+      MeshName=Plane Instance
+      Position=(-20.42, 34.20, -1.69), 
+      Rotation=(0.26477, 0.65566, 0.65566, -0.26477), 
+      Scale=(100.00, 100.00, 100.00)
+
+RoomCorner (12): 
+      MeshName=Cube Instance
+      Position=(33.80, 1.71, 48.86), 
+      Rotation=(-0.22559, -0.67016, -0.67016, 0.22559), 
+      Scale=(62.88, -62.88, 62.88)
+
+Wall (4): 
+      MeshName=pb_Mesh-22250(Clone)(Clone) Instance
+      Position=(-18.00, 19.75, 65.60), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
+RoomCorner (5): 
+      MeshName=Cube Instance
+      Position=(-32.18, 1.70, -27.06), 
+      Rotation=(0.61237, -0.35355, -0.35355, -0.61237), 
+      Scale=(62.88, 62.88, 62.88)
+
+RoomCorner (18): 
+      MeshName=Cube Instance
+      Position=(-35.29, 1.71, 48.90), 
+      Rotation=(0.20501, -0.67674, -0.67674, -0.20501), 
+      Scale=(-62.88, 62.88, 62.88)
+
+Wall (11): 
+      MeshName=pb_Mesh-45784(Clone)(Clone)(Clone) Instance
+      Position=(61.90, 19.75, -77.65), 
+      Rotation=(0.00000, -0.70711, 0.00000, 0.70711), 
+      Scale=(1.00, 1.00, 1.00)
+
+Wall (1): 
+      MeshName=pb_Mesh-22250(Clone) Instance
+      Position=(-18.00, 1.75, 65.60), 
+      Rotation=(0.00000, 0.00000, 0.00000, 1.00000), 
+      Scale=(1.00, 1.00, 1.00)
+
