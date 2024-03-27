@@ -20,10 +20,20 @@ public class PlayerManager : MonoBehaviour
     {
         playerInputManger = GetComponent<PlayerInputManager>();
         playerList = new GameObject[] {player1, player2, player3, player4};
+
+        if (playerInputManger.playerCount > 0)
+            playerInputManger.playerPrefab = playerList[playerInputManger.playerCount];
+    }
+
+    private void Awake()
+    {
+        playerInputManger = GetComponent<PlayerInputManager>();
+        playerList = new GameObject[] { player1, player2, player3, player4 };
     }
 
     public void OnPlayerJoined(PlayerInput playerInput)
     {
-        playerInputManger.playerPrefab = playerList[playerInputManger.playerCount];
+        if(playerInputManger != null)
+            playerInputManger.playerPrefab = playerList[playerInputManger.playerCount];
     }
 }
