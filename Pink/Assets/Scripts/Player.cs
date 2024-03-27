@@ -105,6 +105,23 @@ public class Player : MonoBehaviour
         set { gravity = value; }
     }
 
+    public Camera PlayerCamera
+    {
+        get { return camera; }
+    }
+
+    public float ReloadTimer
+    {
+        get { return reloadTimer; }
+        set { reloadTimer = value; }
+    }
+
+    public float ReloadDuration
+    {
+        get { return reloadDuration; }
+        set { reloadDuration = value; }
+    }
+
     private void Awake()
     {
         playerControls = new PlayerControls();
@@ -196,7 +213,7 @@ public class Player : MonoBehaviour
         // Combat
         if (reloadTimer <= 0 && shoot && !isRespawning)
         {
-            Attack();
+            shootAction(this);
         }
         invincibilityTimer -= Time.deltaTime;
         reloadTimer -= Time.deltaTime;
@@ -286,10 +303,10 @@ public class Player : MonoBehaviour
         shoot = ctx.action.triggered;
     }
 
-    public delegate void delegateShoot();
+    public delegate void delegateShoot(Player player);
     public delegateShoot shootAction;
 
-    private void Attack()
+    private void Attack(Player player)
     {
         GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
         bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);

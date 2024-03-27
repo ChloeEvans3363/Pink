@@ -15,6 +15,15 @@ public class PowerUpManager : MonoBehaviour
         moonGravity
     }
 
+    private GameObject bullet;
+    private float reloadTimer;
+    private float reloadDuration;
+
+    public GameObject Bullet
+    {
+        set { bullet = value; }
+    }
+
     public void ActivatePowerUp(PowerUp powerUp, List<Player> players)
     {
         switch (powerUp)
@@ -27,11 +36,13 @@ public class PowerUpManager : MonoBehaviour
             case PowerUp.explosionLanding:
                 foreach (Player player in players)
                 {
-                    //player.shootAction 
+
                 }
                 break;
 
             case PowerUp.tripleBarrelRocketLauncher:
+                foreach (Player player in players)
+                    player.shootAction = TripleAttack;
                 break;
 
             case PowerUp.mortarRockets:
@@ -46,5 +57,14 @@ public class PowerUpManager : MonoBehaviour
                 break;
 
         }
+    }
+
+    private void TripleAttack(Player player)
+    {
+        GameObject bulletObj = Instantiate(bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
+        GameObject bulletObjLeft = Instantiate(bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
+        bulletObj.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
+        bulletObjLeft.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
+        player.ReloadTimer = player.ReloadDuration;
     }
 }
