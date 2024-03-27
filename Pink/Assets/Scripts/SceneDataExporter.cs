@@ -15,15 +15,29 @@ public class SceneDataExporter : MonoBehaviour
         string path = Application.dataPath + "/SceneData.txt";
 
         StreamWriter writer = new StreamWriter(path, false);
+        writer.WriteLine(" {\n     \"version\": 2,\n     \"gameObjects\": {");
 
-        foreach (GameObject go in gameObjects)
+        for (int i = 0; i < gameObjects.Length; i++)
         {
             //If object has mesh, print it
-            MeshFilter meshFilter = go.GetComponent<MeshFilter>();
+            MeshFilter meshFilter = gameObjects[i].GetComponent<MeshFilter>();
 
             if (meshFilter != null)
-                writer.WriteLine(go.name + ": \n      MeshName=" + meshFilter.mesh.name + "\n      Position=" + go.transform.position + ", \n      Rotation=" + go.transform.rotation + ", \n      Scale=" + go.transform.lossyScale + "\n");
+            {
+                writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
+                writer.WriteLine("               \"Mesh Name\": " + "\"" + meshFilter.mesh.name + "\",");
+                writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
+                writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation + "\",");
+                writer.Write("               \"Scale\": " + "\"" + gameObjects[i].transform.lossyScale + "\"}");
+
+                if (i < gameObjects.Length - 1)
+                    writer.WriteLine(",");
+            }
+
+            //writer.WriteLine(gameObjects[i].name + ": \n      MeshName=" + meshFilter.mesh.name + "\n      Position=" + gameObjects[i].transform.position + ", \n      Rotation=" + gameObjects[i].transform.rotation + ", \n      Scale=" + gameObjects[i].transform.lossyScale + "\n");
         }
+
+        writer.WriteLine("\n     }\n}");
 
         writer.Close();
     }
