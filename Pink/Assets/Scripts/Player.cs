@@ -66,6 +66,9 @@ public class Player : MonoBehaviour
     private bool isRespawning = false;
     private int winningPlayerIndex;
 
+    //Test - redoing input system
+    private InputAction movement;
+    private InputAction cameraMove;
 
     // Get Sets
     public bool Grounded
@@ -111,12 +114,33 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        movement = playerControls.Gameplay.Move;
+        movement.Enable();
+
+        cameraMove = playerControls.Gameplay.CameraMove;
+        cameraMove.Enable();
+
+        playerControls.Gameplay.Jump.performed += OnJump;
+        playerControls.Gameplay.Jump.canceled += OnJump;
+        playerControls.Gameplay.Jump.Enable();
+
+        playerControls.Gameplay.Shoot.performed += OnShoot;
+        playerControls.Gameplay.Shoot.canceled += OnShoot;
+        playerControls.Gameplay.Shoot.Enable();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
+        movement.Disable();
+        cameraMove.Disable();
+
+        playerControls.Gameplay.Jump.performed -= OnJump;
+        playerControls.Gameplay.Jump.canceled -= OnJump;
+        playerControls.Gameplay.Jump.Disable();
+
+        playerControls.Gameplay.Shoot.performed -= OnShoot;
+        playerControls.Gameplay.Shoot.canceled -= OnShoot;
+        playerControls.Gameplay.Shoot.Disable();
     }
 
     // Start is called before the first frame update
@@ -125,8 +149,6 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-
 
         spawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
 
@@ -143,6 +165,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movementInput = movement.ReadValue<UnityEngine.Vector2>();
+        cameraInput = cameraMove.ReadValue<UnityEngine.Vector2>();
+
         float time = Time.deltaTime;
         elapsedTime += time;
         UnityEngine.Vector3 spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
@@ -252,22 +277,12 @@ public class Player : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    public void OnMove(InputAction.CallbackContext ctx)
-    {
-        movementInput = ctx.ReadValue<UnityEngine.Vector2>();
-    }
-
-    public void OnCameraMove(InputAction.CallbackContext ctx)
-    {
-        cameraInput = ctx.ReadValue<UnityEngine.Vector2>();
-    }
-
-    public void OnJump(InputAction.CallbackContext ctx)
+    private void OnJump(InputAction.CallbackContext ctx)
     {
         jumped = ctx.action.triggered;
     }
 
-    public void OnShoot(InputAction.CallbackContext ctx)
+    private void OnShoot(InputAction.CallbackContext ctx)
     {
         shoot = ctx.action.triggered;
     }
