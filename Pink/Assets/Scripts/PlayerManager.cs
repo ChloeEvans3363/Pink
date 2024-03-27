@@ -25,6 +25,5 @@ public class PlayerManager : MonoBehaviour
     public void OnPlayerJoined(PlayerInput playerInput)
     {
         playerInputManger.playerPrefab = playerList[playerInputManger.playerCount];
-
     }
 }

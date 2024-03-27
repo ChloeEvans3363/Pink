@@ -86,12 +86,23 @@ public class Player : MonoBehaviour
         set { jump = value; }
     }
 
+    public float Speed
+    {
+        get { return maxSpeed; }
+        set { maxSpeed = value; }
+    }
+
     public UnityEngine.Vector3 Velocity
     {
         get { return velocity; }
         set { velocity = value; }
     }
 
+    public float Gravity
+    {
+        get { return gravity; }
+        set { gravity = value; }
+    }
 
     private void Awake()
     {
@@ -125,6 +136,8 @@ public class Player : MonoBehaviour
         countdownText = gameCanvas.GetChild(0).GetChild(3).gameObject.GetComponent<TMP_Text>();
         winScreen = gameCanvas.GetChild(1).gameObject;
         winText = gameCanvas.GetChild(1).GetChild(1).gameObject.GetComponent<TMP_Text>();
+
+        GameManger.Instance.players.Add(this);
     }
 
     // Update is called once per frame
