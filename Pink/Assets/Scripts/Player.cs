@@ -122,10 +122,10 @@ public class Player : MonoBehaviour
         playerControls.Gameplay.Jump.canceled += OnJump;
         playerControls.Gameplay.Jump.Enable();
 
-        shootAction = OnShoot;
+        shootAction = Attack;
 
-        playerControls.Gameplay.Shoot.performed += ShootInputAction;
-        playerControls.Gameplay.Shoot.canceled += ShootInputAction;
+        playerControls.Gameplay.Shoot.performed += OnShoot;
+        playerControls.Gameplay.Shoot.canceled += OnShoot;
         playerControls.Gameplay.Shoot.Enable();
     }
 
@@ -138,8 +138,8 @@ public class Player : MonoBehaviour
         playerControls.Gameplay.Jump.canceled -= OnJump;
         playerControls.Gameplay.Jump.Disable();
 
-        playerControls.Gameplay.Shoot.performed -= ShootInputAction;
-        playerControls.Gameplay.Shoot.canceled -= ShootInputAction;
+        playerControls.Gameplay.Shoot.performed -= OnShoot;
+        playerControls.Gameplay.Shoot.canceled -= OnShoot;
         playerControls.Gameplay.Shoot.Disable();
     }
 
@@ -196,9 +196,7 @@ public class Player : MonoBehaviour
         // Combat
         if (reloadTimer <= 0 && shoot && !isRespawning)
         {
-            GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
-            bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);
-            reloadTimer = reloadDuration;
+            Attack();
         }
         invincibilityTimer -= Time.deltaTime;
         reloadTimer -= Time.deltaTime;
@@ -278,22 +276,24 @@ public class Player : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    delegate void delegateShoot(InputAction.CallbackContext ctx);
-    delegateShoot shootAction;
-
     private void OnJump(InputAction.CallbackContext ctx)
     {
         jumped = ctx.action.triggered;
     }
 
-    private void ShootInputAction(InputAction.CallbackContext ctx)
-    {
-        shootAction(ctx);
-    }
-
     private void OnShoot(InputAction.CallbackContext ctx)
     {
         shoot = ctx.action.triggered;
+    }
+
+    public delegate void delegateShoot();
+    public delegateShoot shootAction;
+
+    private void Attack()
+    {
+        GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
+        bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);
+        reloadTimer = reloadDuration;
     }
 
     public bool TakeDamage(int damage, GameObject explosion)
