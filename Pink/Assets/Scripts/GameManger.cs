@@ -10,6 +10,8 @@ public class GameManger : MonoBehaviour
 
     public List<Player> players = new List<Player>();
 
+    private PowerUpManager powerUpManager = new PowerUpManager();
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -21,7 +23,7 @@ public class GameManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //powerUpManager.ActivatePowerUp(PowerUpManager.PowerUp.moonGravity, players);
     }
 
     // Update is called once per frame
