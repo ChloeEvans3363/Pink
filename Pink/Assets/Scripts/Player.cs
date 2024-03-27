@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     // Player Movement
     private CharacterController controller;
     private PlayerControls playerControls;
+    private InputAction movement;
+    private InputAction cameraMove;
     private UnityEngine.Vector2 movementInput;
     private float accelerate = 500.0f;
     private float friction = 15;
@@ -65,10 +67,6 @@ public class Player : MonoBehaviour
     private float currentRespawnTime = 0f;
     private bool isRespawning = false;
     private int winningPlayerIndex;
-
-    //Test - redoing input system
-    private InputAction movement;
-    private InputAction cameraMove;
 
     // Get Sets
     public bool Grounded
@@ -124,8 +122,10 @@ public class Player : MonoBehaviour
         playerControls.Gameplay.Jump.canceled += OnJump;
         playerControls.Gameplay.Jump.Enable();
 
-        playerControls.Gameplay.Shoot.performed += OnShoot;
-        playerControls.Gameplay.Shoot.canceled += OnShoot;
+        shootAction = OnShoot;
+
+        playerControls.Gameplay.Shoot.performed += ShootInputAction;
+        playerControls.Gameplay.Shoot.canceled += ShootInputAction;
         playerControls.Gameplay.Shoot.Enable();
     }
 
@@ -138,8 +138,8 @@ public class Player : MonoBehaviour
         playerControls.Gameplay.Jump.canceled -= OnJump;
         playerControls.Gameplay.Jump.Disable();
 
-        playerControls.Gameplay.Shoot.performed -= OnShoot;
-        playerControls.Gameplay.Shoot.canceled -= OnShoot;
+        playerControls.Gameplay.Shoot.performed -= ShootInputAction;
+        playerControls.Gameplay.Shoot.canceled -= ShootInputAction;
         playerControls.Gameplay.Shoot.Disable();
     }
 
@@ -165,6 +165,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Setting up inputs
         movementInput = movement.ReadValue<UnityEngine.Vector2>();
         cameraInput = cameraMove.ReadValue<UnityEngine.Vector2>();
 
@@ -277,9 +278,17 @@ public class Player : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
+    delegate void delegateShoot(InputAction.CallbackContext ctx);
+    delegateShoot shootAction;
+
     private void OnJump(InputAction.CallbackContext ctx)
     {
         jumped = ctx.action.triggered;
+    }
+
+    private void ShootInputAction(InputAction.CallbackContext ctx)
+    {
+        shootAction(ctx);
     }
 
     private void OnShoot(InputAction.CallbackContext ctx)
