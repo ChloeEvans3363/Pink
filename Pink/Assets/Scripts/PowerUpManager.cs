@@ -34,7 +34,7 @@ public class PowerUpManager : MonoBehaviour
 
             case PowerUp.tripleBarrelRocketLauncher:
                 foreach (Player player in players)
-                    player.shootAction = TripleAttack;
+                    player.shootAction += TripleAttack;
                 break;
 
             case PowerUp.mortarRockets:
