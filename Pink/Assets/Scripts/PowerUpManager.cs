@@ -12,16 +12,8 @@ public class PowerUpManager : MonoBehaviour
         explosionLanding,
         tripleBarrelRocketLauncher,
         mortarRockets,
-        moonGravity
-    }
-
-    private GameObject bullet;
-    private float reloadTimer;
-    private float reloadDuration;
-
-    public GameObject Bullet
-    {
-        set { bullet = value; }
+        moonGravity,
+        bigExplosion
     }
 
     public void ActivatePowerUp(PowerUp powerUp, List<Player> players)
@@ -56,15 +48,34 @@ public class PowerUpManager : MonoBehaviour
                 }
                 break;
 
+            case PowerUp.bigExplosion:
+                foreach (Player player in players)
+                    player.shootAction = BigExplosion;
+                break;
+
         }
     }
 
     private void TripleAttack(Player player)
     {
-        GameObject bulletObj = Instantiate(bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
-        GameObject bulletObjLeft = Instantiate(bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
+        GameObject bulletObj = Instantiate(player.bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
+        GameObject bulletObjLeft = Instantiate(player.bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
         bulletObj.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
         bulletObjLeft.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
         player.ReloadTimer = player.ReloadDuration;
+    }
+
+    private void BigExplosion(Player player)
+    {
+        GameObject bulletObj = Instantiate(player.bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
+        bulletObj.GetComponent<Bullet>().OuterRadius = 20f;
+        bulletObj.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
+        player.ReloadTimer = player.ReloadDuration;
+    }
+
+    private void BigExplosion(Bullet bullet)
+    {
+        bullet.GetComponent<Bullet>().OuterRadius = 20f;
+        bullet.GetComponent<Bullet>().bulletAction(bullet);
     }
 }

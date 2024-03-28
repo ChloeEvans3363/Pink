@@ -16,10 +16,22 @@ public class Bullet : MonoBehaviour
 
     // Explosion
     [SerializeField] private GameObject explosion;
-    [SerializeField] private float outerRadius = 10f;
+    private float outerRadius = 10f;
 
     //[SerializeField] private LayerMask groundLayers;
     //private Rigidbody rigidbody;
+
+    public float OuterRadius
+    {
+        get { return outerRadius; }
+        set {  outerRadius = value; }
+    }
+
+    public GameObject Explosion
+    {
+        get { return explosion; }
+        set { explosion = value; }
+    }
 
     private void Awake()
     {
@@ -27,7 +39,7 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-
+        bulletAction = DefaultBullet;
     }
 
     private void OnDisable()
@@ -56,9 +68,21 @@ public class Bullet : MonoBehaviour
 
         if(distance > range)
         {
-            DestroyImmediate(this.gameObject);
+            DestroyImmediate(this);
         }
 
+    }
+
+    public delegate void BulletHit(Bullet bullet);
+    public BulletHit bulletAction;
+
+    private void DefaultBullet(Bullet bullet)
+    {
+        GameObject explosionObj = Instantiate(explosion, this.transform.position, Quaternion.identity);
+        explosionObj.transform.localScale = new Vector3(outerRadius, outerRadius, outerRadius);
+        explosionObj.GetComponent<Explosion>().outerRadius = outerRadius;
+        explosionObj.GetComponent<Explosion>().owner = this.owner;
+        Destroy(this.gameObject);
     }
 
     /// <summary>
@@ -68,11 +92,7 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("Bullet has collided with " + collision.gameObject);
-        GameObject explosionObj = Instantiate(explosion, this.transform.position, Quaternion.identity);
-        explosionObj.transform.localScale = new Vector3(outerRadius, outerRadius, outerRadius);
-        explosionObj.GetComponent<Explosion>().outerRadius = outerRadius;
-        explosionObj.GetComponent<Explosion>().owner = this.owner;
-        Destroy(this.gameObject);
+        bulletAction(this);
     }
 
 }
