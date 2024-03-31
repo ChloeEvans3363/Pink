@@ -11,7 +11,7 @@ public class Explosion : MonoBehaviour
 
     // Explosion
     [SerializeField] private GameObject explosion;
-    [SerializeField] public float outerRadius = 10f;
+    public float outerRadius = 10f;
 
     // Rocket Jump
     [SerializeField] public float explosionForce = 60f;
@@ -36,7 +36,7 @@ public class Explosion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        transform.localScale = new Vector3(outerRadius, outerRadius, outerRadius);
     }
 
     // Update is called once per frame
