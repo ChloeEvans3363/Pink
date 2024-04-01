@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -67,6 +69,12 @@ public class Player : MonoBehaviour
     private float currentRespawnTime = 0f;
     private bool isRespawning = false;
     private int winningPlayerIndex;
+
+    // Pausing
+    private bool pause = false;
+    private bool gamePaused = false;
+    private bool prevPauseState = false;
+    [SerializeField] private GameObject pauseScreen;
 
     // Get Sets
     public bool Grounded
@@ -144,6 +152,10 @@ public class Player : MonoBehaviour
         playerControls.Gameplay.Shoot.performed += OnShoot;
         playerControls.Gameplay.Shoot.canceled += OnShoot;
         playerControls.Gameplay.Shoot.Enable();
+
+        playerControls.Gameplay.Pause.performed += OnPause;
+        playerControls.Gameplay.Pause.canceled += OnPause;
+        playerControls.Gameplay.Pause.Enable();
     }
 
     private void OnDisable()
@@ -158,6 +170,10 @@ public class Player : MonoBehaviour
         playerControls.Gameplay.Shoot.performed -= OnShoot;
         playerControls.Gameplay.Shoot.canceled -= OnShoot;
         playerControls.Gameplay.Shoot.Disable();
+
+        playerControls.Gameplay.Pause.performed -= OnPause;
+        playerControls.Gameplay.Pause.canceled -= OnPause;
+        playerControls.Gameplay.Pause.Disable();
     }
 
     // Start is called before the first frame update
@@ -175,6 +191,8 @@ public class Player : MonoBehaviour
         countdownText = gameCanvas.GetChild(0).GetChild(3).gameObject.GetComponent<TMP_Text>();
         winScreen = gameCanvas.GetChild(1).gameObject;
         winText = gameCanvas.GetChild(1).GetChild(1).gameObject.GetComponent<TMP_Text>();
+        pauseScreen = gameCanvas.GetChild(2).gameObject;
+        
 
         GameManger.Instance.players.Add(this);
     }
@@ -291,6 +309,37 @@ public class Player : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (pause && !prevPauseState)
+        {
+            if (gamePaused == false)
+            {
+                // Pause Game
+                gamePaused = true;
+                pauseScreen.SetActive(true);
+                Time.timeScale = 0f;
+
+                // Find all Buttons in menu
+                Button[] buttons = pauseScreen.GetComponentsInChildren<Button>();
+
+                if (buttons.Length > 0)
+                {
+                    // Set focus to first button found
+                    EventSystem.current.SetSelectedGameObject(buttons[0].gameObject);
+
+                }
+            }
+            else
+            {
+                // UnPaused Game
+                gamePaused = false;
+                pauseScreen.SetActive(false);
+                Time.timeScale = 1f;
+            }
+        }
+
+        // Update the previous pause state
+        prevPauseState = pause;
     }
 
     private void OnJump(InputAction.CallbackContext ctx)
@@ -301,6 +350,11 @@ public class Player : MonoBehaviour
     private void OnShoot(InputAction.CallbackContext ctx)
     {
         shoot = ctx.action.triggered;
+    }
+
+    private void OnPause(InputAction.CallbackContext ctx)
+    {
+        pause = ctx.action.triggered;
     }
 
     public delegate void delegateShoot(Player player);
@@ -459,6 +513,17 @@ public class Player : MonoBehaviour
         // Wait for 5 seconds
         yield return new WaitForSeconds(5f);
         // Load the Menu scene
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void ResumeMatch()
+    {
+        gamePaused = false;
+        pauseScreen.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    public void ExitMatch()
+    {
         SceneManager.LoadScene("Menu");
     }
 }

@@ -93,6 +93,7 @@ MonoBehaviour:
   winScreen: {fileID: 0}
   winText: {fileID: 0}
   respawnTime: 3
+  pauseScreen: {fileID: 0}
 --- !u!114 &942493651985967002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +187,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 74eb8a50-c0d3-487d-937c-8291ae7a474d
     m_ActionName: Gameplay/Shoot[/Mouse/leftButton,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0824ffba-08e6-4b5c-ada1-7ef16c3bface
+    m_ActionName: Gameplay/Pause[/Keyboard/p]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Gameplay
@@ -389,6 +394,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6349546250622227739}
     m_Modifications:
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8690846478744644694}
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitMatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 749430753818298852, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -408,6 +433,26 @@ PrefabInstance:
     - target: {fileID: 4824424505650550440, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8690846478744644694}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeMatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8574359337841251862, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
       propertyPath: m_Pivot.x
