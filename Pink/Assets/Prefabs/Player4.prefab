@@ -86,6 +86,13 @@ MonoBehaviour:
   invincibilityDuration: 1
   reloadDuration: 2
   score: 0
+  gameCanvas: {fileID: 0}
+  respawnScreen: {fileID: 0}
+  countdownText: {fileID: 0}
+  winScreen: {fileID: 0}
+  winText: {fileID: 0}
+  respawnTime: 3
+  pauseScreen: {fileID: 0}
 --- !u!114 &942493651985967002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 77326003ac5358a4d80a8906e47b3633, type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -179,6 +186,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 74eb8a50-c0d3-487d-937c-8291ae7a474d
     m_ActionName: Gameplay/Shoot[/Mouse/leftButton,/XInputControllerWindows/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0824ffba-08e6-4b5c-ada1-7ef16c3bface
+    m_ActionName: Gameplay/Pause[/Keyboard/p,/DualSenseGamepadHID/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Gameplay
