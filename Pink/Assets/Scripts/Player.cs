@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
 {
     // Player Movement
     private CharacterController controller;
-    private PlayerControls playerControls;
+    private InputActionMap gameplay;
+    private InputActionAsset inputAsset;
     private InputAction movement;
     private InputAction cameraMove;
     private UnityEngine.Vector2 movementInput;
@@ -132,30 +133,34 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
+        inputAsset = this.GetComponent<PlayerInput>().actions;
+        gameplay = inputAsset.FindActionMap("Gameplay");
+        //playerControls = new PlayerControls();
     }
 
     private void OnEnable()
     {
-        movement = playerControls.Gameplay.Move;
+        movement = gameplay.FindAction("Move");
         movement.Enable();
 
-        cameraMove = playerControls.Gameplay.CameraMove;
+        cameraMove = gameplay.FindAction("CameraMove");
         cameraMove.Enable();
 
-        playerControls.Gameplay.Jump.performed += OnJump;
-        playerControls.Gameplay.Jump.canceled += OnJump;
-        playerControls.Gameplay.Jump.Enable();
+        gameplay.FindAction("Jump").performed += OnJump;
+        gameplay.FindAction("Jump").canceled += OnJump;
+        gameplay.FindAction("Jump").Enable();
 
         shootAction = Attack;
 
-        playerControls.Gameplay.Shoot.performed += OnShoot;
-        playerControls.Gameplay.Shoot.canceled += OnShoot;
-        playerControls.Gameplay.Shoot.Enable();
+        gameplay.FindAction("Shoot").performed += OnShoot;
+        gameplay.FindAction("Shoot").canceled += OnShoot;
+        gameplay.FindAction("Shoot").Enable();
 
-        playerControls.Gameplay.Pause.performed += OnPause;
-        playerControls.Gameplay.Pause.canceled += OnPause;
-        playerControls.Gameplay.Pause.Enable();
+        gameplay.FindAction("Pause").performed += OnPause;
+        gameplay.FindAction("Pause").canceled += OnPause;
+        gameplay.FindAction("Pause").Enable();
+
+        gameplay.Enable();
     }
 
     private void OnDisable()
@@ -163,17 +168,19 @@ public class Player : MonoBehaviour
         movement.Disable();
         cameraMove.Disable();
 
-        playerControls.Gameplay.Jump.performed -= OnJump;
-        playerControls.Gameplay.Jump.canceled -= OnJump;
-        playerControls.Gameplay.Jump.Disable();
+        gameplay.FindAction("Jump").performed -= OnJump;
+        gameplay.FindAction("Jump").canceled -= OnJump;
+        gameplay.FindAction("Jump").Disable();
 
-        playerControls.Gameplay.Shoot.performed -= OnShoot;
-        playerControls.Gameplay.Shoot.canceled -= OnShoot;
-        playerControls.Gameplay.Shoot.Disable();
+        gameplay.FindAction("Shoot").performed -= OnShoot;
+        gameplay.FindAction("Shoot").canceled -= OnShoot;
+        gameplay.FindAction("Shoot").Disable();
 
-        playerControls.Gameplay.Pause.performed -= OnPause;
-        playerControls.Gameplay.Pause.canceled -= OnPause;
-        playerControls.Gameplay.Pause.Disable();
+        gameplay.FindAction("Pause").performed -= OnPause;
+        gameplay.FindAction("Pause").canceled -= OnPause;
+        gameplay.FindAction("Pause").Disable();
+
+        gameplay.Disable();
     }
 
     // Start is called before the first frame update
@@ -301,7 +308,6 @@ public class Player : MonoBehaviour
             {
                 Respawn();
                 this.transform.GetChild(0).gameObject.SetActive(true);
-                playerControls.Enable();
                 respawnScreen.SetActive(false);
                 isRespawning = false;
                 countdownText.SetText("");

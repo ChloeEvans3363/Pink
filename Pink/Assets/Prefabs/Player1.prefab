@@ -191,7 +191,7 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0824ffba-08e6-4b5c-ada1-7ef16c3bface
     m_ActionName: Gameplay/Pause[/Keyboard/p]
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1

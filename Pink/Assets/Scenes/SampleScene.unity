@@ -11100,7 +11100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NotificationBehavior: 2
-  m_MaxPlayerCount: -1
+  m_MaxPlayerCount: 4
   m_AllowJoining: 1
   m_JoinBehavior: 1
   m_PlayerJoinedEvent:
@@ -11486,6 +11486,10 @@ PrefabInstance:
     - target: {fileID: 942493651985967002, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
       propertyPath: m_NotificationBehavior
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 942493651985967002, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2170273443275068366, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
       propertyPath: m_Name
