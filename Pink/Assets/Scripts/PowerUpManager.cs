@@ -36,6 +36,8 @@ public class PowerUpManager : MonoBehaviour
                 break;
 
             case PowerUp.mortarRockets:
+                foreach (Player player in players)
+                    player.bullet.GetComponent<Bullet>().isLobShot = true;
                 break;
 
             case PowerUp.moonGravity:

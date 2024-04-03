@@ -9,6 +9,9 @@ public class Bullet : MonoBehaviour
     // Bullet Movement
     //private CharacterController controller;
     private Vector3 direction;
+    public bool isLobShot = false;
+    [SerializeField] private Vector3 gravity = new Vector3(0.0f, -9.8f, 0.0f);
+    private Vector3 downwardVelocity = new Vector3(0.0f, 0.0f, 0.0f);
     [SerializeField] private float speed = 20f;
     [SerializeField] private float range = 100f;
     private float distance = 0f;
@@ -64,6 +67,12 @@ public class Bullet : MonoBehaviour
     {
         // Move
         this.transform.Translate(direction * speed * Time.deltaTime);
+        if(isLobShot)
+        {
+            downwardVelocity += gravity * Time.deltaTime;
+            this.transform.Translate(downwardVelocity * Time.deltaTime);
+            //distance += Mathf.Abs(downwardVelocity.y * Time.deltaTime);
+        }
         distance += speed * Time.deltaTime;
 
         if(distance > range)
