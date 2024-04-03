@@ -48,7 +48,7 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == null) { return; }
+        if (other.tag != "Player") { return; }
         float dist = Vector3.Distance(other.transform.position, this.transform.position);
         //Debug.Log("Explosion has triggered with " + other.gameObject + " " + dist + " ft away");
         if(dist <= outerRadius/2)
