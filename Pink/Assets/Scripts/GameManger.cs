@@ -23,7 +23,7 @@ public class GameManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        powerUpManager.ActivatePowerUp(PowerUpManager.PowerUp.tripleBarrelRocketLauncher, players);
+        //powerUpManager.ActivatePowerUp(PowerUpManager.PowerUp.tripleBarrelRocketLauncher, players);
     }
 
     // Update is called once per frame
