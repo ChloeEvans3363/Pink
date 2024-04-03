@@ -404,6 +404,7 @@ public class Player : MonoBehaviour
         bulletObj.GetComponent<Bullet>().OuterRadius = outerRadius;
         bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);
         bulletObj.GetComponent<Bullet>().isLobShot = isLobShot;
+        bulletObj.GetComponent<Rigidbody>().freezeRotation = true;
         reloadTimer = reloadDuration;
     }
 

@@ -63,12 +63,14 @@ public class PowerUpManager : MonoBehaviour
         bulletObjRight.GetComponent<Bullet>().OuterRadius = player.GetComponent<Player>().OuterRadius;
         bulletObjRight.GetComponent<Bullet>().Explosion.GetComponent<Explosion>().explosionForce = 1;
         bulletObjRight.GetComponent<Bullet>().isLobShot = player.GetComponent<Player>().IsLobShot;
+        bulletObjRight.GetComponent<Rigidbody>().freezeRotation = true;
 
         GameObject bulletObjLeft = Instantiate(player.bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, Quaternion.Euler(new Vector3(0, -22.5f, 0)));
         bulletObjLeft.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
         bulletObjLeft.GetComponent<Bullet>().OuterRadius = player.GetComponent<Player>().OuterRadius;
         bulletObjLeft.GetComponent<Bullet>().Explosion.GetComponent<Explosion>().explosionForce = 1;
         bulletObjLeft.GetComponent<Bullet>().isLobShot = player.GetComponent<Player>().IsLobShot;
+        bulletObjLeft.GetComponent<Rigidbody>().freezeRotation = true;
     }
 
 }
