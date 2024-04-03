@@ -62,8 +62,8 @@ public class PowerUpManager : MonoBehaviour
         GameObject bulletObjLeft = Instantiate(player.bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
         bulletObj.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
         bulletObjLeft.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
-        bulletObj.GetComponent<Bullet>().Explosion.GetComponent<Explosion>().explosionForce = 0;
-        bulletObjLeft.GetComponent<Bullet>().Explosion.GetComponent<Explosion>().explosionForce = 0;
+        bulletObj.GetComponent<Bullet>().Explosion.GetComponent<Explosion>().explosionForce = 1;
+        bulletObjLeft.GetComponent<Bullet>().Explosion.GetComponent<Explosion>().explosionForce = 1;
         player.ReloadTimer = player.ReloadDuration;
     }
 
