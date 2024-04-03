@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 
     // Combat
     [SerializeField] public GameObject bullet;
-    [SerializeField] public GameObject explosion;
+    [SerializeField] public GameObject explosionObject;
     private int health = 1;
     [SerializeField] private float invincibilityDuration = 1.0f;
     private float invincibilityTimer = 0;
@@ -79,6 +79,9 @@ public class Player : MonoBehaviour
     private bool gamePaused = false;
     private bool prevPauseState = false;
     [SerializeField] private GameObject pauseScreen;
+
+    // Powerups
+    private bool explosionLanding = false;
 
     // Get Sets
     public bool Grounded
@@ -138,6 +141,11 @@ public class Player : MonoBehaviour
     {
         get { return outerRadius; }
         set { outerRadius = value; }
+    }
+
+    public bool ExplosionLanding
+    {
+        set { explosionLanding = value; }
     }
 
     private void Awake()
@@ -227,10 +235,14 @@ public class Player : MonoBehaviour
         
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
 
-        if (grounded && land)
+        if (grounded && land && explosionLanding)
         {
             land = false;
-
+            GameObject explosionObj = Instantiate(explosionObject, this.transform.position, UnityEngine.Quaternion.identity);
+            explosionObj.transform.localScale = new UnityEngine.Vector3(outerRadius, outerRadius, outerRadius);
+            explosionObj.GetComponent<Explosion>().outerRadius = outerRadius;
+            explosionObj.GetComponent<Explosion>().owner = this.gameObject;
+            explosionObj.GetComponent<Explosion>().explosionForce = 1;
         }
 
         // Wishdir
@@ -396,7 +408,6 @@ public class Player : MonoBehaviour
                 explosion.GetComponent<Explosion>().outerRadius,
                 explosion.GetComponent<Explosion>().explosionForce);
 
-            Debug.Log("Player got pushed back");
             return false;
         }
 
@@ -524,7 +535,10 @@ public class Player : MonoBehaviour
         if (distance > radius)
             return;
         float forceMulti = 1f - (distance/radius);
-        explosionVector /= distance;
+
+        if(distance != 0)
+            explosionVector /= distance;
+
         velocity += explosionVector * force * forceMulti;
     }
 

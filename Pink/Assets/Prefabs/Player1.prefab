@@ -84,6 +84,7 @@ MonoBehaviour:
   camera: {fileID: 7939007980706503191}
   sensitivity: 30
   bullet: {fileID: 7135911143341288173, guid: 923a341e11bfae3439fb583c1b191451, type: 3}
+  explosionObject: {fileID: 6438579448860108464, guid: a438e0cf4a256e640b5cb7373af62089, type: 3}
   invincibilityDuration: 1
   reloadDuration: 2
   score: 0

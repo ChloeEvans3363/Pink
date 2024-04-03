@@ -27,9 +27,7 @@ public class PowerUpManager : MonoBehaviour
 
             case PowerUp.explosionLanding:
                 foreach (Player player in players)
-                {
-
-                }
+                    player.ExplosionLanding = true;
                 break;
 
             case PowerUp.tripleBarrelRocketLauncher:
@@ -65,11 +63,4 @@ public class PowerUpManager : MonoBehaviour
         player.ReloadTimer = player.ReloadDuration;
     }
 
-    private void BigExplosion(Player player)
-    {
-        GameObject bulletObj = Instantiate(player.bullet, player.transform.position + player.PlayerCamera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
-        bulletObj.GetComponent<Bullet>().OuterRadius = 20f;
-        bulletObj.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
-        player.ReloadTimer = player.ReloadDuration;
-    }
 }
