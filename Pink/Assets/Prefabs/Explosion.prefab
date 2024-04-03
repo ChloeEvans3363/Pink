@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 716876490665535940}
   - component: {fileID: 8706364090045409608}
   - component: {fileID: -7347113723806138977}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 0.5
+  owner: {fileID: 0}
   explosion: {fileID: 0}
   outerRadius: 20
   explosionForce: 60

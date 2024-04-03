@@ -11535,6 +11535,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8690846478744644694, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 6438579448860108464, guid: a438e0cf4a256e640b5cb7373af62089, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13192,7 +13196,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   bullet: {fileID: 7135911143341288173, guid: 923a341e11bfae3439fb583c1b191451, type: 3}
-  explosion: {fileID: 6438579448860108464, guid: a438e0cf4a256e640b5cb7373af62089, type: 3}
 --- !u!4 &2056877033
 Transform:
   m_ObjectHideFlags: 0

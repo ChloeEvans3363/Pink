@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private float minFriction = 0.5f;
     [SerializeField] private float maxSpeed = 8f;
     private UnityEngine.Vector3 velocity;
+    private bool land = false;
 
     // Gravity and Jumping
     [SerializeField] private LayerMask groundLayers;
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour
 
     // Combat
     [SerializeField] public GameObject bullet;
+    [SerializeField] public GameObject explosion;
     private int health = 1;
     [SerializeField] private float invincibilityDuration = 1.0f;
     private float invincibilityTimer = 0;
@@ -225,8 +227,11 @@ public class Player : MonoBehaviour
         
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
 
-        if (grounded && velocity.y < 0)
-            velocity.y = -2f;
+        if (grounded && land)
+        {
+            land = false;
+
+        }
 
         // Wishdir
         UnityEngine.Vector3 move = new UnityEngine.Vector3(movementInput.x, 0, movementInput.y).normalized;
@@ -300,6 +305,7 @@ public class Player : MonoBehaviour
 
 
             velocity += UnityEngine.Vector3.down * (gravity * time);
+            land = true;
         }
 
         if (isRespawning)
