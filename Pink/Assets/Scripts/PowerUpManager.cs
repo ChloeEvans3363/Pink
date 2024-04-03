@@ -41,7 +41,7 @@ public class PowerUpManager : MonoBehaviour
             case PowerUp.moonGravity:
                 foreach (Player player in players)
                 {
-                    player.Jump = 20;
+                    player.Jump = 15;
                     player.Gravity = 10;
                 }
                 break;
