@@ -37,7 +37,7 @@ public class PowerUpManager : MonoBehaviour
 
             case PowerUp.mortarRockets:
                 foreach (Player player in players)
-                    player.bullet.GetComponent<Bullet>().isLobShot = true;
+                    player.GetComponent<Player>().IsLobShot = true;
                 break;
 
             case PowerUp.moonGravity:
@@ -64,6 +64,8 @@ public class PowerUpManager : MonoBehaviour
         bulletObjLeft.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
         bulletObj.GetComponent<Bullet>().Explosion.GetComponent<Explosion>().explosionForce = 1;
         bulletObjLeft.GetComponent<Bullet>().Explosion.GetComponent<Explosion>().explosionForce = 1;
+        bulletObj.GetComponent<Bullet>().isLobShot = player.GetComponent<Player>().IsLobShot;
+        bulletObjLeft.GetComponent<Bullet>().isLobShot = player.GetComponent<Player>().IsLobShot;
         player.ReloadTimer = player.ReloadDuration;
     }
 

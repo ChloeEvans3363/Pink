@@ -82,6 +82,7 @@ public class Player : MonoBehaviour
 
     // Powerups
     private bool explosionLanding = false;
+    private bool isLobShot = false;
 
     // Get Sets
     public bool Grounded
@@ -146,6 +147,12 @@ public class Player : MonoBehaviour
     public bool ExplosionLanding
     {
         set { explosionLanding = value; }
+    }
+
+    public bool IsLobShot
+    {
+        get { return isLobShot; }
+        set { isLobShot = value; }
     }
 
     private void Awake()
@@ -396,6 +403,7 @@ public class Player : MonoBehaviour
         GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
         bulletObj.GetComponent<Bullet>().OuterRadius = outerRadius;
         bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);
+        bulletObj.GetComponent<Bullet>().isLobShot = isLobShot;
         reloadTimer = reloadDuration;
     }
 
