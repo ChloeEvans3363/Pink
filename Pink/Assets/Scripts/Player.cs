@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     private float reloadTimer = 0;
     private bool shoot = false;
     private GameObject[] spawnPoints;
+    private float outerRadius = 10f;
 
     // Scoring
     [SerializeField] const int winScore = 10;
@@ -129,6 +130,12 @@ public class Player : MonoBehaviour
     {
         get { return reloadDuration; }
         set { reloadDuration = value; }
+    }
+
+    public float OuterRadius
+    {
+        get { return outerRadius; }
+        set { outerRadius = value; }
     }
 
     private void Awake()
@@ -369,6 +376,7 @@ public class Player : MonoBehaviour
     private void Attack(Player player)
     {
         GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
+        bulletObj.GetComponent<Bullet>().OuterRadius = outerRadius;
         bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);
         reloadTimer = reloadDuration;
     }

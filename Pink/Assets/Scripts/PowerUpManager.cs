@@ -50,7 +50,7 @@ public class PowerUpManager : MonoBehaviour
 
             case PowerUp.bigExplosion:
                 foreach (Player player in players)
-                    player.shootAction = BigExplosion;
+                    player.OuterRadius = 20;
                 break;
 
         }
@@ -71,11 +71,5 @@ public class PowerUpManager : MonoBehaviour
         bulletObj.GetComponent<Bullet>().OuterRadius = 20f;
         bulletObj.GetComponent<Bullet>().Shoot(player.PlayerCamera.transform.forward, player.gameObject);
         player.ReloadTimer = player.ReloadDuration;
-    }
-
-    private void BigExplosion(Bullet bullet)
-    {
-        bullet.GetComponent<Bullet>().OuterRadius = 20f;
-        bullet.GetComponent<Bullet>().bulletAction(bullet);
     }
 }
