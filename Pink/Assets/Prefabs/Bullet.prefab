@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 215624289165063968}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,8 +122,6 @@ MonoBehaviour:
   speed: 20
   range: 100
   explosion: {fileID: 6438579448860108464, guid: a438e0cf4a256e640b5cb7373af62089, type: 3}
-  innerRadius: 2
-  outerRadius: 10
 --- !u!54 &215624289165063968
 Rigidbody:
   m_ObjectHideFlags: 0

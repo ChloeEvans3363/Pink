@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
 
     private void OnEnable()
     {
-        bulletAction = DefaultBullet;
+
     }
 
     private void OnDisable()
@@ -73,18 +73,6 @@ public class Bullet : MonoBehaviour
 
     }
 
-    public delegate void BulletHit(Bullet bullet);
-    public BulletHit bulletAction;
-
-    private void DefaultBullet(Bullet bullet)
-    {
-        GameObject explosionObj = Instantiate(explosion, this.transform.position, Quaternion.identity);
-        explosionObj.transform.localScale = new Vector3(outerRadius, outerRadius, outerRadius);
-        explosionObj.GetComponent<Explosion>().outerRadius = outerRadius;
-        explosionObj.GetComponent<Explosion>().owner = this.owner;
-        Destroy(this.gameObject);
-    }
-
     /// <summary>
     /// On Collision, explode
     /// </summary>
@@ -92,7 +80,14 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("Bullet has collided with " + collision.gameObject);
-        bulletAction(this);
+        if (collision.gameObject.tag == "Bullet" && collision.gameObject.GetComponent<Bullet>().owner == owner)
+            return;
+
+        GameObject explosionObj = Instantiate(explosion, this.transform.position, Quaternion.identity);
+        explosionObj.transform.localScale = new Vector3(outerRadius, outerRadius, outerRadius);
+        explosionObj.GetComponent<Explosion>().outerRadius = outerRadius;
+        explosionObj.GetComponent<Explosion>().owner = this.owner;
+        Destroy(this.gameObject);
     }
 
 }

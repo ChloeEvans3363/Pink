@@ -10,8 +10,6 @@ public class GameManger : MonoBehaviour
 
     public List<Player> players = new List<Player>();
 
-
-    [SerializeField] public GameObject bullet;
     private PowerUpManager powerUpManager = new PowerUpManager();
 
     private void Awake()
@@ -25,7 +23,7 @@ public class GameManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        powerUpManager.ActivatePowerUp(PowerUpManager.PowerUp.explosionLanding, players);
+        powerUpManager.ActivatePowerUp(PowerUpManager.PowerUp.tripleBarrelRocketLauncher, players);
     }
 
     // Update is called once per frame
