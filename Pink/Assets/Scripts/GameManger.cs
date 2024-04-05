@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManger : MonoBehaviour
@@ -8,9 +9,7 @@ public class GameManger : MonoBehaviour
     
     public static GameManger Instance { get { return _instance; } }
 
-    public List<Player> players = new List<Player>();
 
-    public int pausedPlayers = 0;
 
     // Match Settings
     public float matchTime = 10.0f * 60.0f; // Total Time until a match automatically ends.
@@ -19,9 +18,11 @@ public class GameManger : MonoBehaviour
     public int maxPowerUpLimit = 2; // Total Number of Power Ups that are allowed to be active in a match
 
     // Match Stats
+    public List<Player> players = new List<Player>(); // Total Players
     public float currentMatchTime; // Current Time of the match
     public int totalScore; // Score of all players together
     public int activePowerUps; // Total Power Ups Active
+    public int pausedPlayers = 0; // Total Player that have Paused the Game
 
     private PowerUpManager powerUpManager = new PowerUpManager();
 
