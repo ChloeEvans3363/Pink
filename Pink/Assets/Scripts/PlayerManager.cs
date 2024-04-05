@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject player4;
     private GameObject[] playerList;
 
-    public Canvas playerUI;
+    public GameObject playerUI;
 
 
     private void OnEnable() 

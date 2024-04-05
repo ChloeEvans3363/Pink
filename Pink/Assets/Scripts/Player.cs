@@ -356,6 +356,7 @@ public class Player : MonoBehaviour
                 gamePaused = true;
                 pauseScreen.SetActive(true);
                 Time.timeScale = 0f;
+                GameManger.Instance.pausedPlayers += 1;
 
                 // Find all Buttons in menu
                 Button[] buttons = pauseScreen.GetComponentsInChildren<Button>();
@@ -369,10 +370,19 @@ public class Player : MonoBehaviour
             }
             else
             {
-                // UnPaused Game
-                gamePaused = false;
                 pauseScreen.SetActive(false);
-                Time.timeScale = 1f;
+                gamePaused = false;
+
+                // Checks how many players are paused
+                GameManger.Instance.pausedPlayers -= 1;
+                Debug.Log(GameManger.Instance.pausedPlayers);
+
+                if (GameManger.Instance.pausedPlayers == 0)
+                {
+                    // UnPaused Game
+                    Time.timeScale = 1f;
+                }
+
             }
         }
 

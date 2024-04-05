@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hiss Bang Pow
+  m_text: "Ugly The Cat: \nMissiles and Mayhem"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9da688e3171033c46b45ee1218072b2c, type: 2}
   m_sharedMaterial: {fileID: 7394266667793262727, guid: 9da688e3171033c46b45ee1218072b2c, type: 2}
@@ -1027,8 +1027,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 141.8
-  m_fontSizeBase: 141.8
+  m_fontSize: 90.4
+  m_fontSizeBase: 90.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

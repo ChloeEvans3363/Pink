@@ -10,6 +10,9 @@ public class GameManger : MonoBehaviour
 
     public List<Player> players = new List<Player>();
 
+    public int pausedPlayers = 0;
+
+
     private PowerUpManager powerUpManager = new PowerUpManager();
 
     private void Awake()
