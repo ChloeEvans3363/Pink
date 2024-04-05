@@ -12,6 +12,16 @@ public class GameManger : MonoBehaviour
 
     public int pausedPlayers = 0;
 
+    // Match Settings
+    public float matchTime = 10.0f * 60.0f; // Total Time until a match automatically ends.
+    public int matchGoal = 20; // Total Score needed to Win the Game
+    public int powerUpThreshold = 5; // Amount need to activate the next Power Up
+    public int maxPowerUpLimit = 2; // Total Number of Power Ups that are allowed to be active in a match
+
+    // Match Stats
+    public float currentMatchTime; // Current Time of the match
+    public int totalScore; // Score of all players together
+    public int activePowerUps; // Total Power Ups Active
 
     private PowerUpManager powerUpManager = new PowerUpManager();
 
@@ -21,17 +31,23 @@ public class GameManger : MonoBehaviour
             Destroy(this.gameObject);
         else
             _instance = this;
+
+        currentMatchTime = matchTime;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
+        float time = Time.deltaTime;
+        currentMatchTime -= time;
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PowerUpCheck()
     {
-
+        if (totalScore % powerUpThreshold == 0 && activePowerUps < powerUpThreshold)
+        {
+            PowerUpManager.Instance.ActivateRandomPowerUp(players);
+            activePowerUps++;
+        }
     }
 }

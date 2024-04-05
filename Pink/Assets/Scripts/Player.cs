@@ -58,10 +58,8 @@ public class Player : MonoBehaviour
     private float outerRadius = 10f;
 
     // Scoring
-    [SerializeField] const int winScore = 10;
-    [SerializeField] const float endTime = 10.0f * 60.0f;
-    private float elapsedTime = 0.0f;
     public int score = 0;
+    [SerializeField] public TMP_Text scoreText;
 
     // Winning & Respawn
     [SerializeField] private Transform gameCanvas;
@@ -73,6 +71,7 @@ public class Player : MonoBehaviour
     private float currentRespawnTime = 0f;
     private bool isRespawning = false;
     private int winningPlayerIndex;
+    [SerializeField] private TMP_Text gameTimer;
 
     // Pausing
     private bool pause = false;
@@ -216,55 +215,16 @@ public class Player : MonoBehaviour
 
         spawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
 
-        gameCanvas = GameObject.FindObjectOfType<Canvas>().GetComponent<Transform>();
-        
-        respawnScreen = gameCanvas.GetChild(0).gameObject;
-        countdownText = gameCanvas.GetChild(0).GetChild(3).gameObject.GetComponent<TMP_Text>();
-        winScreen = gameCanvas.GetChild(1).gameObject;
-        winText = gameCanvas.GetChild(1).GetChild(1).gameObject.GetComponent<TMP_Text>();
-        pauseScreen = gameCanvas.GetChild(2).gameObject;
-        
-
         GameManger.Instance.players.Add(this);
+
+        // Set Up Score Display
+        scoreText.text = score.ToString() + " / " + GameManger.Instance.matchGoal.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Setting up inputs
-        movementInput = movement.ReadValue<UnityEngine.Vector2>();
-        cameraInput = cameraMove.ReadValue<UnityEngine.Vector2>();
 
-        float time = Time.deltaTime;
-        elapsedTime += time;
-        UnityEngine.Vector3 spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
-            transform.position.z);
-        
-        grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
-
-        if (grounded && land && explosionLanding)
-        {
-            land = false;
-            GameObject explosionObj = Instantiate(explosionObject, this.transform.position, UnityEngine.Quaternion.identity);
-            explosionObj.transform.localScale = new UnityEngine.Vector3(outerRadius, outerRadius, outerRadius);
-            explosionObj.GetComponent<Explosion>().outerRadius = outerRadius;
-            explosionObj.GetComponent<Explosion>().owner = this.gameObject;
-            explosionObj.GetComponent<Explosion>().explosionForce = 1;
-        }
-
-        // Wishdir
-        UnityEngine.Vector3 move = new UnityEngine.Vector3(movementInput.x, 0, movementInput.y).normalized;
-        UnityEngine.Vector3 wishdir = UnityEngine.Vector3.ProjectOnPlane(transform.TransformDirection(move), UnityEngine.Vector3.down).normalized;
-
-        // Camera
-        float cameraX = cameraInput.x * sensitivity * Time.deltaTime;
-        float cameraY = cameraInput.y * sensitivity * Time.deltaTime;
-
-        xRotation -= cameraY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        camera.transform.localRotation = UnityEngine.Quaternion.Euler(xRotation, 0f, 0f);
-        transform.Rotate(UnityEngine.Vector3.up * cameraX);
 
         // Combat
         if (reloadTimer <= 0 && shoot && !isRespawning)
@@ -275,17 +235,15 @@ public class Player : MonoBehaviour
         reloadTimer -= Time.deltaTime;
 
         // End Game
-        if(elapsedTime >= endTime || score >= winScore)
+        if(GameManger.Instance.currentMatchTime <= 0 || score >= GameManger.Instance.matchGoal)
         {
-            //GameObject.FindObjectsOfType(typeof(MonoBehaviour)); //returns Object[]
-            //GameObject.FindGameObjectsWithTag("Untagged");  //returns GameObject[]
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
             for (int i = 0; i < players.Length; i++)
             {
                 GameObject player = players[i];
                 if (!player.activeInHierarchy) continue;
-                if (player.GetComponent<Player>().score >= winScore)
+                if (player.GetComponent<Player>().score >= GameManger.Instance.matchGoal)
                 {
                     winningPlayerIndex = i;
                     break;
@@ -299,33 +257,7 @@ public class Player : MonoBehaviour
             StartCoroutine(LoadMenuAfterDelay());
         }
 
-        // Movement
-        if (grounded)
-        {
-            ApplyFriction(time);
-            ApplyAcceleration(wishdir, accelerate, time);
-
-            velocity = UnityEngine.Vector3.ProjectOnPlane(velocity, UnityEngine.Vector3.down);
-            if (jumped)
-            {
-                velocity += -UnityEngine.Vector3.down * jump;
-            }
-        }
-        else
-        {
-            float coeff = UnityEngine.Vector3.Dot(velocity, wishdir) > 0 ? airAccelCoeff : airDecelCoeff;
-
-            ApplyAcceleration(wishdir, coeff, time);
-
-            if (Mathf.Abs(move.z) > 0.0001)
-            {
-                ApplyAirControl(move, wishdir, time);
-            }
-
-
-            velocity += UnityEngine.Vector3.down * (gravity * time);
-            land = true;
-        }
+        Movement();
 
         if (isRespawning)
         {
@@ -388,6 +320,81 @@ public class Player : MonoBehaviour
 
         // Update the previous pause state
         prevPauseState = pause;
+
+        // Set Match Display Timer to elapsed time in game
+
+        gameTimer.text = GameManger.Instance.currentMatchTime.ToString("N0");
+    }
+
+    private void Movement()
+    {
+        if (isRespawning)
+        {
+            velocity = UnityEngine.Vector3.zero;
+            return;
+        }
+
+        // Setting up inputs
+        movementInput = movement.ReadValue<UnityEngine.Vector2>();
+        cameraInput = cameraMove.ReadValue<UnityEngine.Vector2>();
+
+        float time = Time.deltaTime;
+        UnityEngine.Vector3 spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y - groundedOffset,
+            transform.position.z);
+
+        grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
+
+        if (grounded && land && explosionLanding)
+        {
+            land = false;
+            GameObject explosionObj = Instantiate(explosionObject, this.transform.position, UnityEngine.Quaternion.identity);
+            explosionObj.transform.localScale = new UnityEngine.Vector3(outerRadius, outerRadius, outerRadius);
+            explosionObj.GetComponent<Explosion>().outerRadius = outerRadius;
+            explosionObj.GetComponent<Explosion>().owner = this.gameObject;
+            explosionObj.GetComponent<Explosion>().explosionForce = 1;
+        }
+
+        // Wishdir
+        UnityEngine.Vector3 move = new UnityEngine.Vector3(movementInput.x, 0, movementInput.y).normalized;
+        UnityEngine.Vector3 wishdir = UnityEngine.Vector3.ProjectOnPlane(transform.TransformDirection(move), UnityEngine.Vector3.down).normalized;
+
+        // Camera
+        float cameraX = cameraInput.x * sensitivity * Time.deltaTime;
+        float cameraY = cameraInput.y * sensitivity * Time.deltaTime;
+
+        xRotation -= cameraY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        camera.transform.localRotation = UnityEngine.Quaternion.Euler(xRotation, 0f, 0f);
+        transform.Rotate(UnityEngine.Vector3.up * cameraX);
+
+        // Movement
+        if (grounded)
+        {
+            ApplyFriction(time);
+            ApplyAcceleration(wishdir, accelerate, time);
+
+            velocity = UnityEngine.Vector3.ProjectOnPlane(velocity, UnityEngine.Vector3.down);
+            if (jumped)
+            {
+                velocity += -UnityEngine.Vector3.down * jump;
+            }
+        }
+        else
+        {
+            float coeff = UnityEngine.Vector3.Dot(velocity, wishdir) > 0 ? airAccelCoeff : airDecelCoeff;
+
+            ApplyAcceleration(wishdir, coeff, time);
+
+            if (Mathf.Abs(move.z) > 0.0001)
+            {
+                ApplyAirControl(move, wishdir, time);
+            }
+
+
+            velocity += UnityEngine.Vector3.down * (gravity * time);
+            land = true;
+        }
     }
 
     private void OnJump(InputAction.CallbackContext ctx)
@@ -438,7 +445,7 @@ public class Player : MonoBehaviour
         Debug.Log("Took " + damage + " damage. Has " + this.health + " health left.");
         invincibilityTimer = invincibilityDuration;
         if(this.health <= 0) {
-            explosion.GetComponent<Explosion>().owner.GetComponent<Player>().score++;
+            explosion.GetComponent<Explosion>().owner.GetComponent<Player>().AddScore();
             respawnScreen.SetActive(true);
             currentRespawnTime = respawnTime;
             isRespawning = true;
@@ -578,5 +585,13 @@ public class Player : MonoBehaviour
     public void ExitMatch()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    public void AddScore()
+    {
+        score++;
+        GameManger.Instance.totalScore++;
+        GameManger.Instance.PowerUpCheck();
+        scoreText.text = score.ToString() + " / " + GameManger.Instance.matchGoal.ToString();
     }
 }

@@ -4378,6 +4378,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players: []
+  pausedPlayers: 0
+  matchTime: 600
+  matchGoal: 20
+  currentMatchTime: 600
 --- !u!4 &611631318
 Transform:
   m_ObjectHideFlags: 0
@@ -7726,7 +7730,6 @@ MonoBehaviour:
   player3: {fileID: 2170273443275068366, guid: 66975ee5b3f6f8d499eeaf53f7e09661, type: 3}
   player4: {fileID: 2170273443275068366, guid: e9865d97fdd54e947bad13de6a72b486, type: 3}
   playerUI: {fileID: 3663212291940810620, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
-  playerPaused: {fileID: 0}
 --- !u!114 &1135228929
 MonoBehaviour:
   m_ObjectHideFlags: 0
