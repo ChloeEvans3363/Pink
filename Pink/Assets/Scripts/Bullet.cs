@@ -10,12 +10,15 @@ public class Bullet : MonoBehaviour
     //private CharacterController controller;
     private Vector3 direction;
     public bool isLobShot = false;
-    [SerializeField] private Vector3 gravity = new Vector3(0.0f, -9.8f, 0.0f);
+    [SerializeField] private Vector3 gravity = new Vector3(0.0f, -9.8f * 2.0f * 2, 0.0f);
     private Vector3 downwardVelocity = new Vector3(0.0f, 0.0f, 0.0f);
     [SerializeField] private float speed = 20f;
     [SerializeField] private float range = 100f;
     private float distance = 0f;
     private GameObject owner = null;
+    private float lifeTime = 0.0f;
+    [SerializeField] private float maxLifeTime = 10.0f;
+
 
     // Explosion
     [SerializeField] private GameObject explosion;
@@ -66,6 +69,7 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         // Move
+        lifeTime += Time.deltaTime;
         this.transform.Translate(direction * speed * Time.deltaTime);
         if(isLobShot)
         {
@@ -75,9 +79,9 @@ public class Bullet : MonoBehaviour
         }
         distance += speed * Time.deltaTime;
 
-        if(distance > range)
+        if(distance > range || lifeTime > maxLifeTime)
         {
-            DestroyImmediate(this);
+            DestroyImmediate(gameObject);
         }
 
     }
