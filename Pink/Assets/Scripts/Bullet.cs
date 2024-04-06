@@ -90,11 +90,11 @@ public class Bullet : MonoBehaviour
     /// On Collision, explode
     /// </summary>
     /// <param name="collision">Colision data</param>
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         //Debug.Log("Bullet has collided with " + collision.gameObject);
-        if ((collision.gameObject.tag == "Bullet" && collision.gameObject.GetComponent<Bullet>().owner == owner) ||
-            collision.gameObject == owner)
+        if ((collision.gameObject.tag == "Bullet" && collision.gameObject.GetComponent<Bullet>().owner == owner) || (
+            collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.gameObject == owner))
             return;
 
         GameObject explosionObj = Instantiate(explosion, this.transform.position, Quaternion.identity);
