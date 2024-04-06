@@ -93,7 +93,8 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         //Debug.Log("Bullet has collided with " + collision.gameObject);
-        if (collision.gameObject.tag == "Bullet" && collision.gameObject.GetComponent<Bullet>().owner == owner)
+        if ((collision.gameObject.tag == "Bullet" && collision.gameObject.GetComponent<Bullet>().owner == owner) ||
+            collision.gameObject == owner)
             return;
 
         GameObject explosionObj = Instantiate(explosion, this.transform.position, Quaternion.identity);
