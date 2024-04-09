@@ -48,8 +48,8 @@ public class SceneDataExporter : MonoBehaviour
 
                     writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
                     writer.WriteLine("               \"Mesh Name\": " + "\"Unknown ProBuilderMesh\",");
-                    writer.WriteLine("               \"Position\": " + "\"" + new Vector3(0,0,0) + "\",");
-                    writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
+                    writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
+                    writer.WriteLine("               \"Rotation\": " + "\"" + new Vector3(0,0,0) + "\",");
                     writer.Write("               \"Scale\": " + "\"" + probuilderScale + "\"}");
                 }
                 else
