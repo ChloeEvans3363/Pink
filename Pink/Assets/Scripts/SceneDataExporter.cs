@@ -25,15 +25,11 @@ public class SceneDataExporter : MonoBehaviour
 
             if (meshFilter != null)
             {
+                //Attempts to find a mesh filename in Unity Assets
                 string modelDataPath = AssetDatabase.GetAssetPath(meshFilter.sharedMesh);
                 Debug.Log("filepath: " + modelDataPath + ", objectname: " + gameObjects[i].name);
-                //GameObject model = AssetDatabase.LoadAssetAtPath<GameObject>(modelDataPath);
 
-                //if (!meshFilter.sharedMesh.name.Equals(model.name))
-                //{
-                //    Debug.Log(model.name);
-                //}
-
+                //Model is default resource, ie Cube or Capsule
                 if(modelDataPath == "Library/unity default resources")
                 {
                     writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
@@ -42,13 +38,17 @@ public class SceneDataExporter : MonoBehaviour
                     writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
                     writer.Write("               \"Scale\": " + "\"" + gameObjects[i].transform.lossyScale + "\"}");
                 }
+                //Model is ProBuilderMesh
+                //ProBuilderMeshes assume objects are only Cubes/Rectangles have rotations of 90 degrees only
+                //Exporter only gets external bounds of mesh, which is why cubes are assumed
+                //Therefore exporter ignores rotation
                 else if (modelDataPath == "")
                 {
                     Vector3 probuilderScale = gameObjects[i].GetComponent<Renderer>().bounds.extents;
 
                     writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
                     writer.WriteLine("               \"Mesh Name\": " + "\"Unknown ProBuilderMesh\",");
-                    writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
+                    writer.WriteLine("               \"Position\": " + "\"" + new Vector3(0,0,0) + "\",");
                     writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
                     writer.Write("               \"Scale\": " + "\"" + probuilderScale + "\"}");
                 }
