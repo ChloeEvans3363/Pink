@@ -44,11 +44,14 @@ public class SceneDataExporter : MonoBehaviour
                 }
                 else if (modelDataPath == "")
                 {
+                    Vector3 probuilderScale = gameObjects[i].GetComponent<Renderer>().bounds.extents;
+                    probuilderScale = new Vector3(probuilderScale.x * 2, probuilderScale.y * 2, probuilderScale.z * 2);
+
                     writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
                     writer.WriteLine("               \"Mesh Name\": " + "\"Unknown ProBuilderMesh\",");
                     writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
                     writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
-                    writer.Write("               \"Scale\": " + "\"" + gameObjects[i].transform.lossyScale + "\"}");
+                    writer.Write("               \"Scale\": " + "\"" + probuilderScale + "\"}");
                 }
                 else
                 {

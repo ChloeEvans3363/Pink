@@ -1,36 +1,46 @@
  {
      "version": 3,
      "gameObjects": {
-          "JumpPad": {
-               "Mesh Name": "Cube Instance",
-               "Position": "(-5.18, 1.96, 13.79)",
+          "SpawnPoint (3)": {
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(-27.20, 3.00, 33.20)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(5.14, 0.48, 5.14)"},
+               "Scale": "(0.00, 0.00, 0.00)"},
+          "JumpPad": {
+               "Mesh Name": "JumpPad.fbx",
+               "Position": "(-5.18, 1.96, 13.79)",
+               "Rotation": "(270.02, 0.00, 0.00)",
+               "Scale": "(77.61, 77.61, 77.61)"},
+          "SpawnPoint (1)": {
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(29.50, 3.00, -30.60)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 0.00, 0.00)"},
+          "default": {
+               "Mesh Name": "Cannon.obj",
+               "Position": "(0.08, 19.69, -49.49)",
+               "Rotation": "(0.00, 180.00, 0.00)",
+               "Scale": "(1.00, 1.00, 1.00)"},
+          "default": {
+               "Mesh Name": "Ugly.obj",
+               "Position": "(0.00, 21.74, -47.55)",
+               "Rotation": "(0.00, 90.00, 0.00)",
+               "Scale": "(1.00, 1.00, 1.00)"},
           "Body": {
                "Mesh Name": "Capsule Instance",
                "Position": "(0.00, 21.74, -47.55)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.20, 1.80, 1.20)"},
-          "SpawnPoint (3)": {
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-27.20, 3.00, 33.20)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 0.19, 1.00)"},
           "SpawnPoint (2)": {
                "Mesh Name": "Unknown ProBuilderMesh",
                "Position": "(-25.81, 3.00, -30.56)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 0.19, 1.00)"},
-          "SpawnPoint (1)": {
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(29.50, 3.00, -30.60)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 0.19, 1.00)"},
+               "Scale": "(0.00, 0.00, 0.00)"},
           "SpawnPoint": {
                "Mesh Name": "Unknown ProBuilderMesh",
                "Position": "(29.10, 3.00, 31.60)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 0.19, 1.00)"},
+               "Scale": "(0.00, 0.00, 0.00)"},
           "RoomCorner (2)": {
                "Mesh Name": "RoomCorner.fbx",
                "Position": "(-32.10, 1.70, -27.20)",
@@ -63,9 +73,9 @@
                "Scale": "(100.00, 100.00, 100.00)"},
           "Ground": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-53.80, 0.71, -42.30)",
+               "Position": "(-0.03, 1.21, 12.06)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(107.54, 1.00, 108.71)"},
           "silo_top (3)": {
                "Mesh Name": "silo_top.fbx",
                "Position": "(-5.56, 46.97, 13.30)",
@@ -83,9 +93,9 @@
                "Scale": "(100.00, 100.00, 100.00)"},
           "Wall (15)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(61.70, 19.75, 66.10)",
+               "Position": "(65.89, 28.76, 12.71)",
                "Rotation": "(0.00, 90.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(8.38, 18.03, 40.84)"},
           "BentBalcony (3)": {
                "Mesh Name": "BentBalcony.fbx",
                "Position": "(-20.31, 34.20, 28.15)",
@@ -93,14 +103,14 @@
                "Scale": "(100.00, 100.00, 100.00)"},
           "Wall (8)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-53.60, 19.75, -6.65)",
+               "Position": "(-57.79, 28.76, 46.74)",
                "Rotation": "(0.00, 270.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(8.38, 18.03, 40.84)"},
           "Wall (9)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-53.60, 19.75, -77.65)",
+               "Position": "(-57.79, 28.76, -24.26)",
                "Rotation": "(0.00, 270.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(8.38, 18.03, 40.84)"},
           "silo_base (2)": {
                "Mesh Name": "silo_base.fbx",
                "Position": "(-5.56, 1.58, 13.31)",
@@ -108,9 +118,9 @@
                "Scale": "(100.00, 100.00, 100.00)"},
           "Wall (13)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-53.60, 19.75, -58.90)",
+               "Position": "(-0.21, 28.76, -54.71)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(40.84, 18.03, 8.38)"},
           "RoomCorner (6)": {
                "Mesh Name": "RoomCorner.fbx",
                "Position": "(-32.18, 1.70, -27.06)",
@@ -118,9 +128,9 @@
                "Scale": "(-62.88, 62.88, 62.88)"},
           "Wall (5)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-87.85, 19.75, 65.60)",
+               "Position": "(-34.46, 28.76, 69.79)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(40.84, 18.03, 8.38)"},
           "BentBalcony (1)": {
                "Mesh Name": "BentBalcony.fbx",
                "Position": "(9.40, 34.20, -1.60)",
@@ -133,14 +143,14 @@
                "Scale": "(100.00, 100.00, 100.00)"},
           "Wall (10)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(61.90, 19.75, -6.65)",
+               "Position": "(57.71, 28.76, 46.74)",
                "Rotation": "(0.00, 270.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(8.38, 18.03, 40.84)"},
           "Wall (6)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-18.00, 19.75, -50.65)",
+               "Position": "(36.08, 28.76, -46.54)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(39.46, 18.03, 8.22)"},
           "BentBalcony": {
                "Mesh Name": "BentBalcony.fbx",
                "Position": "(9.03, 34.20, 28.06)",
@@ -153,9 +163,9 @@
                "Scale": "(100.00, 100.00, 100.00)"},
           "Wall (3)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(54.52, 1.75, -6.80)",
+               "Position": "(54.02, 10.76, 11.52)",
                "Rotation": "(0.00, 270.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(1.00, 18.03, 110.99)"},
           "silo_base (1)": {
                "Mesh Name": "silo_base.fbx",
                "Position": "(-5.56, 1.58, 13.31)",
@@ -163,9 +173,9 @@
                "Scale": "(100.00, 100.00, 100.00)"},
           "Cube (1)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(0.67, 18.80, 72.73)",
+               "Position": "(1.17, 19.30, 69.63)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(30.13, 1.00, 8.21)"},
           "RoomCorner (7)": {
                "Mesh Name": "RoomCorner.fbx",
                "Position": "(33.29, 1.71, -25.85)",
@@ -173,14 +183,14 @@
                "Scale": "(62.88, 62.88, 62.88)"},
           "Wall": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-18.00, 1.75, -43.29)",
+               "Position": "(0.32, 10.76, -42.79)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(110.99, 18.03, 1.00)"},
           "Cube": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(0.67, 18.80, -43.29)",
+               "Position": "(1.17, 19.30, -46.39)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(30.13, 1.00, 8.21)"},
           "silo_wall (2)": {
                "Mesh Name": "silo_wall.fbx",
                "Position": "(-5.54, 11.29, 13.34)",
@@ -198,9 +208,9 @@
                "Scale": "(100.00, 100.00, 100.00)"},
           "Wall (14)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-69.55, 19.75, 66.10)",
+               "Position": "(-65.36, 28.76, 12.71)",
                "Rotation": "(0.00, 90.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(8.38, 18.03, 40.84)"},
           "HayBale (1)": {
                "Mesh Name": "HayBale.fbx",
                "Position": "(-21.97, 6.43, 50.26)",
@@ -218,9 +228,9 @@
                "Scale": "(62.88, -62.88, 62.88)"},
           "Wall (2)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-53.73, 1.75, -6.80)",
+               "Position": "(-54.23, 10.76, 11.52)",
                "Rotation": "(0.00, 270.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(1.00, 18.03, 110.99)"},
           "silo_wall (1)": {
                "Mesh Name": "silo_wall.fbx",
                "Position": "(-5.54, 11.29, 13.34)",
@@ -233,9 +243,9 @@
                "Scale": "(-62.88, 62.88, 62.88)"},
           "Wall (12)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-53.60, 19.75, 73.60)",
+               "Position": "(-0.21, 28.76, 77.79)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(40.84, 18.03, 8.38)"},
           "RoomCorner (10)": {
                "Mesh Name": "RoomCorner.fbx",
                "Position": "(33.22, 1.71, -25.70)",
@@ -278,19 +288,19 @@
                "Scale": "(62.88, 62.88, 62.88)"},
           "Cube (2)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-61.05, 18.80, 10.70)",
+               "Position": "(-57.95, 19.30, 11.20)",
                "Rotation": "(0.00, 270.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(8.21, 1.00, 30.13)"},
           "Cube (3)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(54.54, 18.80, 10.70)",
+               "Position": "(57.64, 19.30, 11.20)",
                "Rotation": "(0.00, 270.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(8.21, 1.00, 30.13)"},
           "Wall (7)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-87.85, 19.75, -50.65)",
+               "Position": "(-34.46, 28.76, -46.46)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(40.84, 18.03, 8.38)"},
           "BentBalcony (2)": {
                "Mesh Name": "BentBalcony.fbx",
                "Position": "(-20.42, 34.20, -1.69)",
@@ -303,9 +313,9 @@
                "Scale": "(62.88, -62.88, 62.88)"},
           "Wall (4)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-18.00, 19.75, 65.60)",
+               "Position": "(36.08, 28.76, 69.71)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(39.46, 18.03, 8.22)"},
           "RoomCorner (5)": {
                "Mesh Name": "RoomCorner.fbx",
                "Position": "(-32.18, 1.70, -27.06)",
@@ -318,13 +328,13 @@
                "Scale": "(-62.88, 62.88, 62.88)"},
           "Wall (11)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(61.90, 19.75, -77.65)",
+               "Position": "(57.71, 28.76, -24.26)",
                "Rotation": "(0.00, 270.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"},
+               "Scale": "(8.38, 18.03, 40.84)"},
           "Wall (1)": {
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-18.00, 1.75, 65.60)",
+               "Position": "(0.32, 10.76, 66.10)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 1.00, 1.00)"}
+               "Scale": "(110.99, 18.03, 1.00)"}
      }
 }
