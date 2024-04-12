@@ -101,13 +101,13 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0.042
+    - _OutlineWidth: 1.98
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _RimStep: 0.465
     - _RimStepSmooth: 0.452
-    - _ShadowStep: 0.29
+    - _ShadowStep: 0.446
     - _ShadowStepSmooth: 0.527
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
