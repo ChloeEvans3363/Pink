@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     // Combat
     [SerializeField] public GameObject bullet;
     [SerializeField] public GameObject explosionObject;
+    [SerializeField] public GameObject bulletSpawn;
     private int health = 1;
     [SerializeField] private float invincibilityDuration = 1.0f;
     private float invincibilityTimer = 0;
@@ -417,7 +418,7 @@ public class Player : MonoBehaviour
 
     private void Attack(Player player)
     {
-        GameObject bulletObj = Instantiate(bullet, this.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
+        GameObject bulletObj = Instantiate(bullet, bulletSpawn.transform.position + camera.transform.forward * 2.0f, UnityEngine.Quaternion.identity);
         bulletObj.GetComponent<Bullet>().OuterRadius = outerRadius;
         bulletObj.GetComponent<Bullet>().Shoot(camera.transform.forward, this.gameObject);
         bulletObj.GetComponent<Bullet>().isLobShot = isLobShot;

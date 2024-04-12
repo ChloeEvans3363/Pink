@@ -126,6 +126,7 @@ MonoBehaviour:
   speed: 30
   range: 100
   maxLifeTime: 10
+  bulletBody: {fileID: 7988964823165759001}
   explosion: {fileID: 6438579448860108464, guid: a438e0cf4a256e640b5cb7373af62089, type: 3}
 --- !u!54 &215624289165063968
 Rigidbody:
@@ -330,5 +331,10 @@ PrefabInstance:
 --- !u!4 &7319846385955812515 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 592551b49667b8c4da7309b93977bdab, type: 3}
+  m_PrefabInstance: {fileID: 7070626109090419528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7988964823165759001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 592551b49667b8c4da7309b93977bdab, type: 3}
   m_PrefabInstance: {fileID: 7070626109090419528}
   m_PrefabAsset: {fileID: 0}
