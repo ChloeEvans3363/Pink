@@ -37,6 +37,7 @@ public class Explosion : MonoBehaviour
     void Start()
     {
         transform.localScale = new Vector3(outerRadius, outerRadius, outerRadius);
+        MoveAudioListener.Instance.MoveListener(this.transform);
     }
 
     // Update is called once per frame

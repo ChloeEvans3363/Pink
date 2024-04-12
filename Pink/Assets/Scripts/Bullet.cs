@@ -92,6 +92,7 @@ public class Bullet : MonoBehaviour
     /// <param name="collision">Colision data</param>
     private void OnTriggerEnter(Collider collision)
     {
+        if(collision.gameObject.tag == "AudioListener") { return; }
         //Debug.Log("Bullet has collided with " + collision.gameObject);
         if ((collision.gameObject.tag == "Bullet" && collision.gameObject.GetComponent<Bullet>().owner == owner) || (
             collision.gameObject.transform.parent != null && collision.gameObject.transform.parent.gameObject == owner))
