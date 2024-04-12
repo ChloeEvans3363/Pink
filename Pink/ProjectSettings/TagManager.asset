@@ -7,6 +7,7 @@ TagManager:
   - ImportantUI
   - Bullet
   - AudioListener
+  - PlayerEyes
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - Ugly2
   - Ugly3
   - Ugly4
-  - 
+  - PostProcess
   - 
   - 
   - 

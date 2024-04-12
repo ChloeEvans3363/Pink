@@ -1,0 +1,24 @@
+{
+  "name": "www.nulltale.volfx",
+  "displayName": "VolFx",
+  "version": "1.2.1",
+  "unity": "2022.1",
+  "description": "VFX Toolkit ☄ selective post-processing with buffer system",
+  "documentationUrl": "https://forum.unity.com/threads/1542860",
+  "author": {
+    "name": "NullTale",
+    "email": "nulltale@gmail.com",
+    "url": "https://github.com/NullTale"
+  },
+  "dependencies": {
+    "com.unity.render-pipelines.universal": "14.0.6"
+  },
+  "hideInEditor": false,
+  "samples": [
+      {
+          "displayName": "Sample Scene",
+          "description": "",
+          "path": "Samples~"
+      }
+    ]
+}
