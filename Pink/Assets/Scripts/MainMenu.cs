@@ -1,3 +1,4 @@
+using EasyTransition;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject currentMenu;
+    public TransitionSettings transition;
+    public float startDelay = 0.2f;
 
     public void OpenMenu(GameObject loadMenu)
     {
@@ -29,7 +32,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        TransitionManager.Instance().Transition(sceneName, transition, startDelay);
     }
 
     public void Quit()

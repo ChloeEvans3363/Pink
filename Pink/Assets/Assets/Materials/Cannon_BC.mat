@@ -124,7 +124,7 @@ Material:
     - _Parallax: 0.02
     - _QueueControl: -1
     - _QueueOffset: 0
-    - _RimStep: 0.767
+    - _RimStep: 0
     - _RimStepSmooth: 0.76
     - _SHADING_STYLE: 0
     - _Segmented: 1
