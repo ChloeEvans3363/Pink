@@ -174,8 +174,6 @@ public class Player : MonoBehaviour
         gameplay.FindAction("Jump").canceled += OnJump;
         gameplay.FindAction("Jump").Enable();
 
-        shootAction = Attack;
-
         gameplay.FindAction("Shoot").performed += OnShoot;
         gameplay.FindAction("Shoot").canceled += OnShoot;
         gameplay.FindAction("Shoot").Enable();
@@ -213,6 +211,7 @@ public class Player : MonoBehaviour
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        shootAction = Attack;
 
         spawnPoints = GameObject.FindGameObjectsWithTag("Respawn");
 
