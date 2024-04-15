@@ -34,9 +34,9 @@ public class MoveAudioListener : MonoBehaviour
             }
         }
 
-        Debug.Log(currentPlayerPosition);
+        //Debug.Log(currentPlayerPosition);
         this.transform.position = currentPlayerPosition;
-        Debug.Log(this.gameObject.transform.position);
+        //Debug.Log(this.gameObject.transform.position);
     }
 
 }

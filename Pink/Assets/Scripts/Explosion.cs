@@ -14,13 +14,14 @@ public class Explosion : MonoBehaviour
     public float outerRadius = 10f;
 
     // Rocket Jump
-    public float explosionForce = 60f;
+    public float explosionForce = 40f;
 
     //[SerializeField] private LayerMask groundLayers;
     //private Rigidbody rigidbody;
 
     private void Awake()
     {
+
     }
 
     private void OnEnable()

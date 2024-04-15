@@ -123,8 +123,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   explosion: {fileID: 0}
   outerRadius: 20
-  explosionForce: 60
-  listener: {fileID: 2641216681357174715, guid: c0dc3d7944d81994f8d030eb3b51c173, type: 3}
+  explosionForce: 40
 --- !u!82 &5442371906909625085
 AudioSource:
   m_ObjectHideFlags: 0
