@@ -6,7 +6,6 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PowerUpManager : MonoBehaviour
 {
