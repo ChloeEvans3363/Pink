@@ -230,6 +230,7 @@ public class Player : MonoBehaviour
         if (reloadTimer <= 0 && shoot && !isRespawning)
         {
             shootAction(this);
+            this.GetComponent<AudioSource>().Play();
         }
         invincibilityTimer -= Time.deltaTime;
         reloadTimer -= Time.deltaTime;
