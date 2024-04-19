@@ -1,22 +1,28 @@
  {
      "version": 4,
      "gameObjects": {
-          "SpawnPoint (1)": {
+          "SpawnPoint": {
                "Object Name": "SpawnPoint",
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(29.50, 3.00, -30.60)",
+               "Position": "(29.10, 3.00, 31.60)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.00, 0.00, 0.00)"},
-          "JumpPad (1)": {
-               "Object Name": "JumpPad",
-               "Mesh Name": "JumpPad.obj",
-               "Position": "(0.32, 2.69, 10.91)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.76, 0.07, 0.76)"},
           "SpawnPoint (2)": {
                "Object Name": "SpawnPoint",
                "Mesh Name": "Unknown ProBuilderMesh",
                "Position": "(-25.81, 3.00, -30.56)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 0.00, 0.00)"},
+          "SpawnPoint (3)": {
+               "Object Name": "SpawnPoint",
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(-27.20, 3.00, 33.20)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 0.00, 0.00)"},
+          "SpawnPoint (1)": {
+               "Object Name": "SpawnPoint",
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(29.50, 3.00, -30.60)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.00, 0.00, 0.00)"},
           "Cannon": {
@@ -37,26 +43,20 @@
                "Position": "(0.00, 21.74, -47.55)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.20, 1.80, 1.20)"},
-          "SpawnPoint": {
-               "Object Name": "SpawnPoint",
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(29.10, 3.00, 31.60)",
+          "JumpPad (1)": {
+               "Object Name": "JumpPad",
+               "Mesh Name": "JumpPad.obj",
+               "Position": "(0.32, 2.69, 10.91)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.00, 0.00, 0.00)"},
-          "SpawnPoint (3)": {
-               "Object Name": "SpawnPoint",
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-27.20, 3.00, 33.20)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.00, 0.00, 0.00)"},
+               "Scale": "(0.76, 0.07, 0.76)"},
           "Balcony": {
                "Object Name": "Balcony",
                "Mesh Name": "Balcony.obj",
                "Position": "(14.53, 35.03, 24.81)",
                "Rotation": "(0.00, 45.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "ShedCorner (2)": {
-               "Object Name": "ShedCorner",
+          "Shed1Corner (2)": {
+               "Object Name": "Shed1Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-32.42, 2.26, -25.58)",
                "Rotation": "(0.00, 60.00, 0.00)",
@@ -67,8 +67,8 @@
                "Position": "(14.59, 35.03, -4.37)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "ShedCorner (3)": {
-               "Object Name": "ShedCorner",
+          "Shed3Corner (3)": {
+               "Object Name": "Shed3Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.40, 2.26, 46.13)",
                "Rotation": "(0.00, 240.00, 0.00)",
@@ -145,8 +145,8 @@
                "Position": "(-34.46, 28.76, 69.79)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(20.42, 9.01, 4.19)"},
-          "HayBale (1)": {
-               "Object Name": "HayBale",
+          "HayBale1 (1)": {
+               "Object Name": "HayBale1",
                "Mesh Name": "HayBale.obj",
                "Position": "(-28.89, 3.18, -14.95)",
                "Rotation": "(0.00, 60.00, 0.00)",
@@ -157,20 +157,20 @@
                "Position": "(-0.04, 1.87, 10.09)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "HayBale (3)": {
-               "Object Name": "HayBale",
+          "HayBale2 (3)": {
+               "Object Name": "HayBale2",
                "Mesh Name": "HayBale.obj",
                "Position": "(39.32, 3.23, 32.04)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(0.58, 0.58, 0.58)"},
-          "ShedCorner (2)": {
-               "Object Name": "ShedCorner",
+          "Shed3Corner (2)": {
+               "Object Name": "Shed3Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.37, 2.26, 46.21)",
                "Rotation": "(0.00, 60.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "HayBale (2)": {
-               "Object Name": "HayBale",
+          "HayBale1 (2)": {
+               "Object Name": "HayBale1",
                "Mesh Name": "HayBale.obj",
                "Position": "(-34.52, 7.33, -13.32)",
                "Rotation": "(330.00, 330.00, 90.00)",
@@ -187,20 +187,20 @@
                "Position": "(36.08, 28.76, -46.54)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(19.73, 9.01, 4.11)"},
-          "ShedCorner (3)": {
-               "Object Name": "ShedCorner",
+          "Shed2Corner (3)": {
+               "Object Name": "Shed2Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(35.00, 2.26, -23.14)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "ShedCorner": {
-               "Object Name": "ShedCorner",
+          "Shed2Corner": {
+               "Object Name": "Shed2Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.90, 2.26, -23.17)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "HayBale": {
-               "Object Name": "HayBale",
+          "HayBale2": {
+               "Object Name": "HayBale2",
                "Mesh Name": "HayBale.obj",
                "Position": "(35.01, 3.33, 33.32)",
                "Rotation": "(0.00, 150.00, 0.00)",
@@ -235,8 +235,8 @@
                "Position": "(1.17, 19.30, 69.57)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(15.06, 0.50, 4.10)"},
-          "ShedCorner": {
-               "Object Name": "ShedCorner",
+          "Shed3Corner": {
+               "Object Name": "Shed3Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.32, 2.26, 46.19)",
                "Rotation": "(0.00, 60.00, 0.00)",
@@ -253,14 +253,14 @@
                "Position": "(1.17, 19.30, -46.18)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(15.06, 0.50, 4.10)"},
-          "HayBale (2)": {
-               "Object Name": "HayBale",
+          "HayBale2 (2)": {
+               "Object Name": "HayBale2",
                "Mesh Name": "HayBale.obj",
                "Position": "(36.26, 7.33, 34.18)",
                "Rotation": "(330.00, 150.00, 90.00)",
                "Scale": "(0.73, 0.73, 0.73)"},
-          "ShedCorner": {
-               "Object Name": "ShedCorner",
+          "Shed1Corner": {
+               "Object Name": "Shed1Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-32.38, 2.26, -25.55)",
                "Rotation": "(0.00, 60.00, 0.00)",
@@ -271,8 +271,8 @@
                "Position": "(31.10, 2.21, -7.58)",
                "Rotation": "(270.00, 225.00, 0.00)",
                "Scale": "(100.00, 100.00, 100.00)"},
-          "ShedCorner (2)": {
-               "Object Name": "ShedCorner",
+          "Shed4Corner (2)": {
+               "Object Name": "Shed4Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-34.21, 2.26, 46.08)",
                "Rotation": "(0.00, 315.00, 0.00)",
@@ -319,8 +319,8 @@
                "Position": "(-0.21, 28.76, 77.79)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(20.42, 9.01, 4.19)"},
-          "ShedCorner (4)": {
-               "Object Name": "ShedCorner",
+          "Shed4Corner (4)": {
+               "Object Name": "Shed4Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-34.10, 2.26, 46.10)",
                "Rotation": "(0.00, 135.00, 0.00)",
@@ -331,38 +331,38 @@
                "Position": "(34.63, 2.21, -11.11)",
                "Rotation": "(270.00, 225.00, 0.00)",
                "Scale": "(100.00, 100.00, 100.00)"},
-          "ShedCorner (3)": {
-               "Object Name": "ShedCorner",
+          "Shed1Corner (3)": {
+               "Object Name": "Shed1Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-32.37, 2.26, -25.65)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "ShedCorner (3)": {
-               "Object Name": "ShedCorner",
+          "Shed4Corner (3)": {
+               "Object Name": "Shed4Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-34.14, 2.26, 46.14)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "HayBale (1)": {
-               "Object Name": "HayBale",
+          "HayBale2 (1)": {
+               "Object Name": "HayBale2",
                "Mesh Name": "HayBale.obj",
                "Position": "(30.63, 3.18, 35.81)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(0.58, 0.58, 0.58)"},
-          "ShedCorner (4)": {
-               "Object Name": "ShedCorner",
+          "Shed2Corner (4)": {
+               "Object Name": "Shed2Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.96, 2.26, -23.10)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "ShedCorner (2)": {
-               "Object Name": "ShedCorner",
+          "Shed2Corner (2)": {
+               "Object Name": "Shed2Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.94, 2.26, -23.21)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "HayBale": {
-               "Object Name": "HayBale",
+          "HayBale1": {
+               "Object Name": "HayBale1",
                "Mesh Name": "HayBale.obj",
                "Position": "(-33.27, 3.33, -12.46)",
                "Rotation": "(0.00, 330.00, 0.00)",
@@ -373,8 +373,8 @@
                "Position": "(-0.06, 2.41, 10.06)",
                "Rotation": "(0.00, 180.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "HayBale (3)": {
-               "Object Name": "HayBale",
+          "HayBale1 (3)": {
+               "Object Name": "HayBale1",
                "Mesh Name": "HayBale.obj",
                "Position": "(-37.58, 3.23, -11.18)",
                "Rotation": "(0.00, 315.00, 0.00)",
@@ -391,8 +391,8 @@
                "Position": "(57.56, 19.30, 11.20)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(4.10, 0.50, 15.06)"},
-          "ShedCorner": {
-               "Object Name": "ShedCorner",
+          "Shed4Corner": {
+               "Object Name": "Shed4Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-34.17, 2.26, 46.04)",
                "Rotation": "(0.00, 315.00, 0.00)",
@@ -427,14 +427,14 @@
                "Position": "(-0.06, 2.41, 10.06)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "ShedCorner (4)": {
-               "Object Name": "ShedCorner",
+          "Shed1Corner (4)": {
+               "Object Name": "Shed1Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-32.33, 2.26, -25.63)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "ShedCorner (4)": {
-               "Object Name": "ShedCorner",
+          "Shed3Corner (4)": {
+               "Object Name": "Shed3Corner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.35, 2.26, 46.11)",
                "Rotation": "(0.00, 240.00, 0.00)",
