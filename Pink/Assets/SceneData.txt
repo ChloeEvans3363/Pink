@@ -1,26 +1,32 @@
  {
      "version": 4,
      "gameObjects": {
-          "SpawnPoint (3)": {
+          "SpawnPoint (1)": {
                "Object Name": "SpawnPoint",
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-27.20, 3.00, 33.20)",
+               "Position": "(29.50, 3.00, -30.60)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.00, 0.00, 0.00)"},
-          "default": {
-               "Object Name": "default",
+          "JumpPad (1)": {
+               "Object Name": "JumpPad",
                "Mesh Name": "JumpPad.obj",
                "Position": "(0.32, 2.69, 10.91)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.76, 0.07, 0.76)"},
-          "default": {
-               "Object Name": "default",
+          "SpawnPoint (2)": {
+               "Object Name": "SpawnPoint",
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(-25.81, 3.00, -30.56)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 0.00, 0.00)"},
+          "Cannon": {
+               "Object Name": "Cannon",
                "Mesh Name": "Cannon.obj",
                "Position": "(3.58, 19.69, -50.26)",
                "Rotation": "(0.00, 180.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "Ugly": {
+               "Object Name": "Ugly",
                "Mesh Name": "Ugly.obj",
                "Position": "(0.00, 21.74, -47.55)",
                "Rotation": "(0.00, 90.00, 0.00)",
@@ -37,50 +43,44 @@
                "Position": "(29.10, 3.00, 31.60)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.00, 0.00, 0.00)"},
-          "SpawnPoint (1)": {
+          "SpawnPoint (3)": {
                "Object Name": "SpawnPoint",
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(29.50, 3.00, -30.60)",
+               "Position": "(-27.20, 3.00, 33.20)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.00, 0.00, 0.00)"},
-          "SpawnPoint (2)": {
-               "Object Name": "SpawnPoint",
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-25.81, 3.00, -30.56)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.00, 0.00, 0.00)"},
-          "default": {
-               "Object Name": "default",
+          "Balcony": {
+               "Object Name": "Balcony",
                "Mesh Name": "Balcony.obj",
                "Position": "(14.53, 35.03, 24.81)",
                "Rotation": "(0.00, 45.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (2)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-32.42, 2.26, -25.58)",
                "Rotation": "(0.00, 60.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "default": {
-               "Object Name": "default",
+          "Balcony (2)": {
+               "Object Name": "Balcony",
                "Mesh Name": "Balcony.obj",
                "Position": "(14.59, 35.03, -4.37)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (3)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.40, 2.26, 46.13)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Top (2)": {
+               "Object Name": "Silo_Top",
                "Mesh Name": "Silo_Top.obj",
                "Position": "(-0.06, 0.05, 10.05)",
                "Rotation": "(0.00, 180.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Top (3)": {
+               "Object Name": "Silo_Top",
                "Mesh Name": "Silo_Top.obj",
                "Position": "(-0.06, 0.05, 10.05)",
                "Rotation": "(0.00, 90.00, 0.00)",
@@ -97,14 +97,14 @@
                "Position": "(-30.24, 2.21, 30.43)",
                "Rotation": "(270.00, 45.00, 0.00)",
                "Scale": "(100.00, 100.00, 100.00)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Top": {
+               "Object Name": "Silo_Top",
                "Mesh Name": "Silo_Top.obj",
                "Position": "(-0.06, 0.05, 10.05)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Top (1)": {
+               "Object Name": "Silo_Top",
                "Mesh Name": "Silo_Top.obj",
                "Position": "(-0.06, 0.05, 10.05)",
                "Rotation": "(0.00, 270.00, 0.00)",
@@ -121,8 +121,8 @@
                "Position": "(-57.79, 28.76, 46.74)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(4.19, 9.01, 20.42)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Base (1)": {
+               "Object Name": "Silo_Base",
                "Mesh Name": "Silo_Base.obj",
                "Position": "(-0.06, 2.41, 10.06)",
                "Rotation": "(0.00, 270.00, 0.00)",
@@ -145,32 +145,32 @@
                "Position": "(-34.46, 28.76, 69.79)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(20.42, 9.01, 4.19)"},
-          "default": {
-               "Object Name": "default",
+          "HayBale (1)": {
+               "Object Name": "HayBale",
                "Mesh Name": "HayBale.obj",
                "Position": "(-28.89, 3.18, -14.95)",
                "Rotation": "(0.00, 60.00, 0.00)",
                "Scale": "(0.58, 0.58, 0.58)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Wall": {
+               "Object Name": "Silo_Wall",
                "Mesh Name": "Silo_Wall.obj",
                "Position": "(-0.04, 1.87, 10.09)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "HayBale (3)": {
+               "Object Name": "HayBale",
                "Mesh Name": "HayBale.obj",
                "Position": "(39.32, 3.23, 32.04)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(0.58, 0.58, 0.58)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (2)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.37, 2.26, 46.21)",
                "Rotation": "(0.00, 60.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "default": {
-               "Object Name": "default",
+          "HayBale (2)": {
+               "Object Name": "HayBale",
                "Mesh Name": "HayBale.obj",
                "Position": "(-34.52, 7.33, -13.32)",
                "Rotation": "(330.00, 330.00, 90.00)",
@@ -187,38 +187,38 @@
                "Position": "(36.08, 28.76, -46.54)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(19.73, 9.01, 4.11)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (3)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(35.00, 2.26, -23.14)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.90, 2.26, -23.17)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "default": {
-               "Object Name": "default",
+          "HayBale": {
+               "Object Name": "HayBale",
                "Mesh Name": "HayBale.obj",
                "Position": "(35.01, 3.33, 33.32)",
                "Rotation": "(0.00, 150.00, 0.00)",
                "Scale": "(0.73, 0.73, 0.73)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Window (1)": {
+               "Object Name": "Silo_Window",
                "Mesh Name": "Silo_Window.obj",
                "Position": "(0.01, 1.05, 10.09)",
                "Rotation": "(0.00, 225.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Window": {
+               "Object Name": "Silo_Window",
                "Mesh Name": "Silo_Window.obj",
                "Position": "(0.01, 1.05, 10.09)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Window (2)": {
+               "Object Name": "Silo_Window",
                "Mesh Name": "Silo_Window.obj",
                "Position": "(0.01, 1.05, 10.09)",
                "Rotation": "(0.00, 135.00, 0.00)",
@@ -235,8 +235,8 @@
                "Position": "(1.17, 19.30, 69.57)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(15.06, 0.50, 4.10)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.32, 2.26, 46.19)",
                "Rotation": "(0.00, 60.00, 0.00)",
@@ -253,14 +253,14 @@
                "Position": "(1.17, 19.30, -46.18)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(15.06, 0.50, 4.10)"},
-          "default": {
-               "Object Name": "default",
+          "HayBale (2)": {
+               "Object Name": "HayBale",
                "Mesh Name": "HayBale.obj",
                "Position": "(36.26, 7.33, 34.18)",
                "Rotation": "(330.00, 150.00, 90.00)",
                "Scale": "(0.73, 0.73, 0.73)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-32.38, 2.26, -25.55)",
                "Rotation": "(0.00, 60.00, 0.00)",
@@ -271,26 +271,26 @@
                "Position": "(31.10, 2.21, -7.58)",
                "Rotation": "(270.00, 225.00, 0.00)",
                "Scale": "(100.00, 100.00, 100.00)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (2)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-34.21, 2.26, 46.08)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "default": {
-               "Object Name": "default",
+          "Balcony (3)": {
+               "Object Name": "Balcony",
                "Mesh Name": "Balcony.obj",
                "Position": "(-14.58, 35.03, -4.78)",
                "Rotation": "(0.00, 225.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "Balcony (1)": {
+               "Object Name": "Balcony",
                "Mesh Name": "Balcony.obj",
                "Position": "(-14.88, 35.03, 24.78)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Wall (2)": {
+               "Object Name": "Silo_Wall",
                "Mesh Name": "Silo_Wall.obj",
                "Position": "(-0.04, 1.87, 10.09)",
                "Rotation": "(0.00, 180.00, 0.00)",
@@ -301,8 +301,8 @@
                "Position": "(-65.36, 28.76, 12.71)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(4.19, 9.01, 20.42)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Base (3)": {
+               "Object Name": "Silo_Base",
                "Mesh Name": "Silo_Base.obj",
                "Position": "(-0.06, 2.41, 10.06)",
                "Rotation": "(0.00, 90.00, 0.00)",
@@ -319,8 +319,8 @@
                "Position": "(-0.21, 28.76, 77.79)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(20.42, 9.01, 4.19)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (4)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-34.10, 2.26, 46.10)",
                "Rotation": "(0.00, 135.00, 0.00)",
@@ -331,50 +331,50 @@
                "Position": "(34.63, 2.21, -11.11)",
                "Rotation": "(270.00, 225.00, 0.00)",
                "Scale": "(100.00, 100.00, 100.00)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (3)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-32.37, 2.26, -25.65)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (3)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-34.14, 2.26, 46.14)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "default": {
-               "Object Name": "default",
+          "HayBale (1)": {
+               "Object Name": "HayBale",
                "Mesh Name": "HayBale.obj",
                "Position": "(30.63, 3.18, 35.81)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(0.58, 0.58, 0.58)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (4)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.96, 2.26, -23.10)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (2)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.94, 2.26, -23.21)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "default": {
-               "Object Name": "default",
+          "HayBale": {
+               "Object Name": "HayBale",
                "Mesh Name": "HayBale.obj",
                "Position": "(-33.27, 3.33, -12.46)",
                "Rotation": "(0.00, 330.00, 0.00)",
                "Scale": "(0.73, 0.73, 0.73)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Base (2)": {
+               "Object Name": "Silo_Base",
                "Mesh Name": "Silo_Base.obj",
                "Position": "(-0.06, 2.41, 10.06)",
                "Rotation": "(0.00, 180.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "HayBale (3)": {
+               "Object Name": "HayBale",
                "Mesh Name": "HayBale.obj",
                "Position": "(-37.58, 3.23, -11.18)",
                "Rotation": "(0.00, 315.00, 0.00)",
@@ -391,20 +391,20 @@
                "Position": "(57.56, 19.30, 11.20)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(4.10, 0.50, 15.06)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-34.17, 2.26, 46.04)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Wall (3)": {
+               "Object Name": "Silo_Wall",
                "Mesh Name": "Silo_Wall.obj",
                "Position": "(-0.04, 1.87, 10.09)",
                "Rotation": "(0.00, 90.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Window (3)": {
+               "Object Name": "Silo_Window",
                "Mesh Name": "Silo_Window.obj",
                "Position": "(0.01, 1.05, 10.09)",
                "Rotation": "(0.00, 45.00, 0.00)",
@@ -421,26 +421,26 @@
                "Position": "(-34.46, 28.76, -46.46)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(20.42, 9.01, 4.19)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Base": {
+               "Object Name": "Silo_Base",
                "Mesh Name": "Silo_Base.obj",
                "Position": "(-0.06, 2.41, 10.06)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.00, 1.00, 1.00)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (4)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(-32.33, 2.26, -25.63)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(0.55, 0.55, -0.55)"},
-          "default": {
-               "Object Name": "default",
+          "ShedCorner (4)": {
+               "Object Name": "ShedCorner",
                "Mesh Name": "ShedCorner.obj",
                "Position": "(34.35, 2.26, 46.11)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "default": {
-               "Object Name": "default",
+          "Silo_Wall (1)": {
+               "Object Name": "Silo_Wall",
                "Mesh Name": "Silo_Wall.obj",
                "Position": "(-0.04, 1.87, 10.09)",
                "Rotation": "(0.00, 270.00, 0.00)",

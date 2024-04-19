@@ -29,13 +29,20 @@ public class SceneDataExporter : MonoBehaviour
             {
                 //Attempts to find a mesh filename in Unity Assets
                 string modelDataPath = AssetDatabase.GetAssetPath(meshFilter.sharedMesh);
-                Debug.Log("filepath: " + modelDataPath + ", objectname: " + gameObjects[i].name);
+                Debug.Log("filepath: " + modelDataPath + ", objectname: " + gameObjects[i].name, gameObjects[i].transform);
+
+                string name = gameObjects[i].name;
+                if (gameObjects[i].name == "default")
+                {
+                    name = gameObjects[i].transform.parent.name;
+                }
+
+                writer.WriteLine("          \"" + name + "\": {");
+                writer.WriteLine("               \"Object Name\": " + "\"" + name.Split(" ")[0] + "\",");
 
                 //Model is default resource, ie Cube or Capsule
-                if(modelDataPath == "Library/unity default resources")
+                if (modelDataPath == "Library/unity default resources")
                 {
-                    writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
-                    writer.WriteLine("               \"Object Name\": " + "\"" + gameObjects[i].name.Split(" ")[0] + "\",");
                     writer.WriteLine("               \"Mesh Name\": " + "\"" + meshFilter.mesh.name + "\",");
                     writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
                     writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
@@ -49,8 +56,6 @@ public class SceneDataExporter : MonoBehaviour
                 {
                     Vector3 probuilderScale = gameObjects[i].GetComponent<Renderer>().bounds.extents;
 
-                    writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
-                    writer.WriteLine("               \"Object Name\": " + "\"" + gameObjects[i].name.Split(" ")[0] + "\",");
                     writer.WriteLine("               \"Mesh Name\": " + "\"Unknown ProBuilderMesh\",");
                     writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
                     writer.WriteLine("               \"Rotation\": " + "\"" + new Vector3(0,0,0) + "\",");
@@ -61,8 +66,6 @@ public class SceneDataExporter : MonoBehaviour
                     string[] segments = modelDataPath.Split('/');
                     string filename = segments[segments.Length-1];
 
-                    writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
-                    writer.WriteLine("               \"Object Name\": " + "\"" + gameObjects[i].name.Split(" ")[0] + "\",");
                     writer.WriteLine("               \"Mesh Name\": " + "\"" + filename + "\",");
                     writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
                     writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
