@@ -18,7 +18,7 @@ public class SceneDataExporter : MonoBehaviour
         string path = Application.dataPath + "/SceneData.txt";
 
         StreamWriter writer = new StreamWriter(path, false);
-        writer.WriteLine(" {\n     \"version\": 3,\n     \"gameObjects\": {");
+        writer.WriteLine(" {\n     \"version\": 4,\n     \"gameObjects\": {");
 
         for (int i = 0; i < gameObjects.Length; i++)
         {
@@ -35,6 +35,7 @@ public class SceneDataExporter : MonoBehaviour
                 if(modelDataPath == "Library/unity default resources")
                 {
                     writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
+                    writer.WriteLine("               \"Object Name\": " + "\"" + gameObjects[i].name.Split(" ")[0] + "\",");
                     writer.WriteLine("               \"Mesh Name\": " + "\"" + meshFilter.mesh.name + "\",");
                     writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
                     writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
@@ -49,6 +50,7 @@ public class SceneDataExporter : MonoBehaviour
                     Vector3 probuilderScale = gameObjects[i].GetComponent<Renderer>().bounds.extents;
 
                     writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
+                    writer.WriteLine("               \"Object Name\": " + "\"" + gameObjects[i].name.Split(" ")[0] + "\",");
                     writer.WriteLine("               \"Mesh Name\": " + "\"Unknown ProBuilderMesh\",");
                     writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
                     writer.WriteLine("               \"Rotation\": " + "\"" + new Vector3(0,0,0) + "\",");
@@ -60,6 +62,7 @@ public class SceneDataExporter : MonoBehaviour
                     string filename = segments[segments.Length-1];
 
                     writer.WriteLine("          \"" + gameObjects[i].name + "\": {");
+                    writer.WriteLine("               \"Object Name\": " + "\"" + gameObjects[i].name.Split(" ")[0] + "\",");
                     writer.WriteLine("               \"Mesh Name\": " + "\"" + filename + "\",");
                     writer.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
                     writer.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
