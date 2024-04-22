@@ -1,12 +1,36 @@
  {
      "version": 4,
      "gameObjects": {
+          "SpawnPoint (1)": {
+               "Object Name": "SpawnPoint",
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(29.50, 3.00, -30.60)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 0.00, 0.00)"},
+          "SpawnPoint (2)": {
+               "Object Name": "SpawnPoint",
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(-25.81, 3.00, -30.56)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 0.00, 0.00)"},
+          "SpawnPoint (3)": {
+               "Object Name": "SpawnPoint",
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(-27.20, 3.00, 33.20)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 0.00, 0.00)"},
           "SpawnPoint": {
                "Object Name": "SpawnPoint",
                "Mesh Name": "Unknown ProBuilderMesh",
                "Position": "(29.10, 3.00, 31.60)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.00, 0.00, 0.00)"},
+          "JumpPad (1)": {
+               "Object Name": "JumpPad",
+               "Mesh Name": "JumpPad.obj",
+               "Position": "(0.32, 2.69, 10.91)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.76, 0.07, 0.76)"},
           "Cannon": {
                "Object Name": "Cannon",
                "Mesh Name": "Cannon.obj",
@@ -25,30 +49,6 @@
                "Position": "(0.00, 21.74, -47.55)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.20, 1.80, 1.20)"},
-          "SpawnPoint (2)": {
-               "Object Name": "SpawnPoint",
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-25.81, 3.00, -30.56)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.00, 0.00, 0.00)"},
-          "JumpPad (1)": {
-               "Object Name": "JumpPad",
-               "Mesh Name": "JumpPad.obj",
-               "Position": "(0.32, 2.69, 10.91)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.76, 0.07, 0.76)"},
-          "SpawnPoint (3)": {
-               "Object Name": "SpawnPoint",
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-27.20, 3.00, 33.20)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.00, 0.00, 0.00)"},
-          "SpawnPoint (1)": {
-               "Object Name": "SpawnPoint",
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(29.50, 3.00, -30.60)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.00, 0.00, 0.00)"},
           "Balcony": {
                "Object Name": "Balcony",
                "Mesh Name": "Balcony.obj",
