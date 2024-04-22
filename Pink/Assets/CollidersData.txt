@@ -6,16 +6,11 @@
                "Position": "(0.32, 2.52, 10.54)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(5.14, 0.48, 5.14)"},
-          "PS5Collider (6)": {
-               "Object Name": "PS5Collider",
-               "Position": "(33.50, 6.50, 55.54)",
-               "Rotation": "(0.00, 330.00, 0.00)",
-               "Scale": "(3.94, 9.45, -0.39)"},
           "PS5Collider (3)": {
                "Object Name": "PS5Collider",
                "Position": "(31.77, 6.50, 38.35)",
                "Rotation": "(0.00, 60.00, 0.00)",
-               "Scale": "(5.52, 9.45, -0.39)"},
+               "Scale": "(3.94, 3.94, -0.39)"},
           "Invisible Wall (7)": {
                "Object Name": "Invisible",
                "Position": "(58.85, 190.00, -48.50)",
@@ -45,46 +40,21 @@
                "Object Name": "PS5Collider",
                "Position": "(26.31, 6.50, 47.81)",
                "Rotation": "(0.00, 60.00, 0.00)",
-               "Scale": "(5.52, 9.45, -0.39)"},
-          "PS5Collider (7)": {
-               "Object Name": "PS5Collider",
-               "Position": "(26.66, 6.50, 51.59)",
-               "Rotation": "(0.00, 330.00, 0.00)",
-               "Scale": "(3.94, 9.45, -0.39)"},
-          "PS5Collider (10)": {
-               "Object Name": "PS5Collider",
-               "Position": "(35.27, 6.50, 36.76)",
-               "Rotation": "(0.00, 330.00, 0.00)",
-               "Scale": "(3.94, 9.45, -0.39)"},
+               "Scale": "(3.94, 3.94, -0.39)"},
           "Invisible Wall (6)": {
                "Object Name": "Invisible",
                "Position": "(-58.85, 190.00, -48.50)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(8.00, 412.70, 8.00)"},
-          "PS5Collider": {
-               "Object Name": "PS5Collider",
-               "Position": "(42.45, 6.50, 44.50)",
-               "Rotation": "(0.00, 60.00, 0.00)",
-               "Scale": "(5.52, 9.45, -0.39)"},
           "Invisible Wall (4)": {
                "Object Name": "Invisible",
                "Position": "(-58.85, 190.00, 71.09)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(8.00, 412.70, 8.00)"},
-          "PS5Collider (9)": {
-               "Object Name": "PS5Collider",
-               "Position": "(42.11, 6.50, 40.71)",
-               "Rotation": "(0.00, 330.00, 0.00)",
-               "Scale": "(3.94, 9.45, -0.39)"},
           "Invisible Wall": {
                "Object Name": "Invisible",
                "Position": "(62.20, 190.00, 21.40)",
                "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(1.00, 412.70, -158.20)"},
-          "PS5Collider (1)": {
-               "Object Name": "PS5Collider",
-               "Position": "(36.99, 6.50, 53.95)",
-               "Rotation": "(0.00, 60.00, 0.00)",
-               "Scale": "(5.52, 9.45, -0.39)"}
+               "Scale": "(1.00, 412.70, -158.20)"}
      }
 }
