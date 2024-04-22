@@ -16,9 +16,14 @@ public class SceneDataExporter : MonoBehaviour
         GameObject[] gameObjects = FindObjectsOfType<GameObject>();
 
         string path = Application.dataPath + "/SceneData.txt";
-
         StreamWriter writer = new StreamWriter(path, false);
         writer.WriteLine(" {\n     \"version\": 4,\n     \"gameObjects\": {");
+
+        string collidersPath = Application.dataPath + "/CollidersData.txt";
+        StreamWriter collisionWriter = new StreamWriter(collidersPath, false);
+        collisionWriter.WriteLine(" {\n     \"version\": 4,\n     \"colliders\": {");
+
+        bool skipComma = true;
 
         for (int i = 0; i < gameObjects.Length; i++)
         {
@@ -29,7 +34,7 @@ public class SceneDataExporter : MonoBehaviour
             {
                 //Attempts to find a mesh filename in Unity Assets
                 string modelDataPath = AssetDatabase.GetAssetPath(meshFilter.sharedMesh);
-                Debug.Log("filepath: " + modelDataPath + ", objectname: " + gameObjects[i].name, gameObjects[i].transform);
+                //Debug.Log("filepath: " + modelDataPath + ", objectname: " + gameObjects[i].name, gameObjects[i].transform);
 
                 string name = gameObjects[i].name;
                 if (gameObjects[i].name == "default")
@@ -75,11 +80,42 @@ public class SceneDataExporter : MonoBehaviour
                 if (i < gameObjects.Length - 1)
                     writer.WriteLine(",");
             }
+            else
+            {
+                if (gameObjects[i].GetComponent<BoxCollider>() != null)
+                {
+                    if (skipComma)
+                    {
+                        skipComma = false;
+                    }
+                    else
+                    {
+                        collisionWriter.WriteLine(",");
+                    }
+
+                    Debug.Log("objectname: " + gameObjects[i].name, gameObjects[i].transform);
+
+                    string name = gameObjects[i].name;
+                    if (gameObjects[i].name == "default")
+                    {
+                        name = gameObjects[i].transform.parent.name;
+                    }
+
+                    collisionWriter.WriteLine("          \"" + name + "\": {");
+                    collisionWriter.WriteLine("               \"Object Name\": " + "\"" + name.Split(" ")[0] + "\",");
+
+                    collisionWriter.WriteLine("               \"Position\": " + "\"" + gameObjects[i].transform.position + "\",");
+                    collisionWriter.WriteLine("               \"Rotation\": " + "\"" + gameObjects[i].transform.rotation.eulerAngles + "\",");
+                    collisionWriter.Write("               \"Scale\": " + "\"" + gameObjects[i].transform.lossyScale + "\"}");
+                }
+            }
         }
 
         writer.WriteLine("\n     }\n}");
+        collisionWriter.WriteLine("\n     }\n}");
 
         writer.Close();
+        collisionWriter.Close();
     }
 }
 #endif
