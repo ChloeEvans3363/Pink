@@ -1,86 +1,26 @@
  {
      "version": 4,
      "colliders": {
-          "PS5BalconyCollider 16": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(-13.27, 34.60, 2.14)",
-               "Rotation": "(0.00, 252.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 15": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(-8.00, 34.60, -3.19)",
-               "Rotation": "(0.00, 200.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 14": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(-10.80, 34.60, -0.74)",
-               "Rotation": "(0.00, 225.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 13": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(-12.33, 34.60, -2.45)",
-               "Rotation": "(0.00, 320.00, 0.00)",
-               "Scale": "(11.00, 1.00, 8.00)"},
-          "PS5BalconyCollider 12": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(7.85, 34.60, -3.16)",
-               "Rotation": "(0.00, 162.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 11": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(13.18, 34.60, 2.11)",
-               "Rotation": "(0.00, 110.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 10": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(10.73, 34.60, -0.69)",
-               "Rotation": "(0.00, 135.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 9": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(12.44, 34.60, -2.22)",
-               "Rotation": "(0.00, 230.00, 0.00)",
-               "Scale": "(11.00, 1.00, 8.00)"},
-          "PS5BalconyCollider 8": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(13.15, 34.60, 17.96)",
-               "Rotation": "(0.00, 72.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 7": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(7.88, 34.60, 23.29)",
-               "Rotation": "(0.00, 20.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 6": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(10.68, 34.60, 20.84)",
-               "Rotation": "(0.00, 45.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 5": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(12.21, 34.60, 22.55)",
-               "Rotation": "(0.00, 140.00, 0.00)",
-               "Scale": "(11.00, 1.00, 8.00)"},
-          "PS5BalconyCollider 4": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(-7.97, 34.60, 23.26)",
-               "Rotation": "(0.00, 342.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 3": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(-13.30, 34.60, 17.99)",
-               "Rotation": "(0.00, 290.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 2": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(-10.85, 34.60, 20.79)",
+          "SiloRoof 4": {
+               "Object Name": "SiloRoof",
+               "Position": "(-34.16, 11.56, 46.07)",
                "Rotation": "(0.00, 315.00, 0.00)",
-               "Scale": "(11.00, 1.00, 7.00)"},
-          "PS5BalconyCollider 1": {
-               "Object Name": "PS5BalconyCollider",
-               "Position": "(-12.56, 34.60, 22.32)",
-               "Rotation": "(0.00, 50.00, 0.00)",
-               "Scale": "(11.00, 1.00, 8.00)"},
+               "Scale": "(17.60, 0.55, 12.65)"},
+          "SiloRoof 3": {
+               "Object Name": "SiloRoof",
+               "Position": "(34.34, 11.56, 46.17)",
+               "Rotation": "(0.00, 60.00, 0.00)",
+               "Scale": "(17.60, 0.55, 12.65)"},
+          "SiloRoof 2": {
+               "Object Name": "SiloRoof",
+               "Position": "(34.93, 11.56, -23.15)",
+               "Rotation": "(0.00, 315.00, 0.00)",
+               "Scale": "(17.60, 0.55, 12.65)"},
+          "SiloRoof 1": {
+               "Object Name": "SiloRoof",
+               "Position": "(-32.37, 11.56, -25.58)",
+               "Rotation": "(0.00, 60.00, 0.00)",
+               "Scale": "(17.60, 0.55, 12.65)"},
           "JumpPad": {
                "Object Name": "JumpPad",
                "Position": "(0.32, 2.52, 10.54)",
@@ -131,6 +71,11 @@
                "Position": "(29.14, 8.98, -29.08)",
                "Rotation": "(0.00, 45.00, 0.00)",
                "Scale": "(2.36, 3.15, -0.39)"},
+          "PS5BalconyCollider 7": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(7.88, 34.60, 23.29)",
+               "Rotation": "(0.00, 20.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5Collider2 (3)": {
                "Object Name": "PS5Collider2",
                "Position": "(26.96, 6.50, -22.46)",
@@ -151,6 +96,11 @@
                "Position": "(41.25, 8.98, -16.92)",
                "Rotation": "(0.00, 45.00, 0.00)",
                "Scale": "(2.36, 3.15, -0.39)"},
+          "PS5BalconyCollider 8": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(13.15, 34.60, 17.96)",
+               "Rotation": "(0.00, 72.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5SiloCollider 6": {
                "Object Name": "PS5SiloCollider",
                "Position": "(7.41, 30.80, 28.54)",
@@ -181,6 +131,11 @@
                "Position": "(38.42, 6.50, -14.10)",
                "Rotation": "(0.00, 45.00, 0.00)",
                "Scale": "(2.36, 3.94, -0.39)"},
+          "PS5BalconyCollider 11": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(13.18, 34.60, 2.11)",
+               "Rotation": "(0.00, 110.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5SiloCollider 14": {
                "Object Name": "PS5SiloCollider",
                "Position": "(7.24, 30.80, -7.85)",
@@ -226,6 +181,11 @@
                "Position": "(31.00, 8.96, -18.42)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(6.70, 3.15, -0.39)"},
+          "PS5BalconyCollider 4": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(-7.97, 34.60, 23.26)",
+               "Rotation": "(0.00, 342.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5Collider2 (4)": {
                "Object Name": "PS5Collider2",
                "Position": "(34.68, 6.50, -14.74)",
@@ -261,6 +221,11 @@
                "Position": "(36.93, 6.50, 53.94)",
                "Rotation": "(0.00, 60.00, 0.00)",
                "Scale": "(3.15, 3.94, 0.39)"},
+          "PS5BalconyCollider 10": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(10.73, 34.60, -0.69)",
+               "Rotation": "(0.00, 135.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5SiloCollider 16": {
                "Object Name": "PS5SiloCollider",
                "Position": "(-7.53, 30.80, -8.44)",
@@ -291,6 +256,21 @@
                "Position": "(35.65, 6.50, -31.18)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(3.15, 3.94, -0.39)"},
+          "PS5BalconyCollider 3": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(-13.30, 34.60, 17.99)",
+               "Rotation": "(0.00, 290.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
+          "PS5BalconyCollider 2": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(-10.85, 34.60, 20.79)",
+               "Rotation": "(0.00, 315.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
+          "PS5BalconyCollider 13": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(-12.33, 34.60, -2.45)",
+               "Rotation": "(0.00, 320.00, 0.00)",
+               "Scale": "(11.00, 1.00, 8.00)"},
           "PS5Collider3 (10)": {
                "Object Name": "PS5Collider3",
                "Position": "(42.02, 6.50, 40.66)",
@@ -326,6 +306,11 @@
                "Position": "(-29.64, 6.50, -18.06)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(3.15, 3.94, -0.39)"},
+          "PS5BalconyCollider 6": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(10.68, 34.60, 20.84)",
+               "Rotation": "(0.00, 45.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5Collider4 (5)": {
                "Object Name": "PS5Collider4",
                "Position": "(-38.66, 8.96, 50.24)",
@@ -341,6 +326,21 @@
                "Position": "(-33.62, 6.50, 37.86)",
                "Rotation": "(0.00, 315.00, 0.00)",
                "Scale": "(3.15, 3.94, 0.39)"},
+          "PS5BalconyCollider 9": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(12.44, 34.60, -2.22)",
+               "Rotation": "(0.00, 230.00, 0.00)",
+               "Scale": "(11.00, 1.00, 8.00)"},
+          "PS5BalconyCollider 15": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(-8.00, 34.60, -3.19)",
+               "Rotation": "(0.00, 200.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
+          "PS5BalconyCollider 14": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(-10.80, 34.60, -0.74)",
+               "Rotation": "(0.00, 225.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5Collider4 (3)": {
                "Object Name": "PS5Collider4",
                "Position": "(-34.61, 6.50, 54.28)",
@@ -376,6 +376,11 @@
                "Position": "(-40.16, 8.98, 39.99)",
                "Rotation": "(0.00, 45.00, 0.00)",
                "Scale": "(2.36, 3.15, 0.39)"},
+          "PS5BalconyCollider 16": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(-13.27, 34.60, 2.14)",
+               "Rotation": "(0.00, 252.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5Collider (8)": {
                "Object Name": "PS5Collider",
                "Position": "(-27.98, 8.98, -33.30)",
@@ -391,6 +396,11 @@
                "Position": "(43.37, 6.50, -23.46)",
                "Rotation": "(0.00, 135.00, 0.00)",
                "Scale": "(3.15, 3.94, -0.39)"},
+          "PS5BalconyCollider 1": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(-12.56, 34.60, 22.32)",
+               "Rotation": "(0.00, 50.00, 0.00)",
+               "Scale": "(11.00, 1.00, 8.00)"},
           "PS5SiloCollider 2": {
                "Object Name": "PS5SiloCollider",
                "Position": "(-14.39, 17.80, 23.91)",
@@ -406,6 +416,11 @@
                "Position": "(-24.18, 6.50, -27.51)",
                "Rotation": "(0.00, 240.00, 0.00)",
                "Scale": "(3.15, 3.94, -0.39)"},
+          "PS5BalconyCollider 5": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(12.21, 34.60, 22.55)",
+               "Rotation": "(0.00, 140.00, 0.00)",
+               "Scale": "(11.00, 1.00, 8.00)"},
           "PS5SiloCollider 11": {
                "Object Name": "PS5SiloCollider",
                "Position": "(18.43, 30.80, 2.58)",
@@ -461,6 +476,11 @@
                "Position": "(-42.98, 6.50, 42.82)",
                "Rotation": "(0.00, 45.00, 0.00)",
                "Scale": "(2.36, 3.94, 0.39)"},
+          "PS5BalconyCollider 12": {
+               "Object Name": "PS5BalconyCollider",
+               "Position": "(7.85, 34.60, -3.16)",
+               "Rotation": "(0.00, 162.00, 0.00)",
+               "Scale": "(11.00, 1.00, 7.00)"},
           "PS5Collider3 (1)": {
                "Object Name": "PS5Collider3",
                "Position": "(26.27, 6.50, 47.77)",
