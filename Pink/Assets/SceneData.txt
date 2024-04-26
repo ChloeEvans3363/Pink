@@ -1,34 +1,22 @@
  {
      "version": 4,
      "gameObjects": {
-          "Shed 4": {
-               "Object Name": "Shed",
-               "Mesh Name": "ShedCorner 1.obj",
-               "Position": "(-34.16, 2.31, 46.07)",
-               "Rotation": "(0.00, 315.00, 0.00)",
-               "Scale": "(0.55, 0.55, -0.55)"},
-          "Shed 3": {
-               "Object Name": "Shed",
-               "Mesh Name": "ShedCorner 1.obj",
-               "Position": "(34.34, 2.31, 46.17)",
-               "Rotation": "(0.00, 60.00, 0.00)",
-               "Scale": "(0.55, 0.55, -0.55)"},
-          "Shed 2": {
-               "Object Name": "Shed",
-               "Mesh Name": "ShedCorner 1.obj",
-               "Position": "(34.93, 2.31, -23.15)",
-               "Rotation": "(0.00, 315.00, 0.00)",
-               "Scale": "(0.55, 0.55, 0.55)"},
           "Shed 1": {
                "Object Name": "Shed",
                "Mesh Name": "ShedCorner 1.obj",
                "Position": "(-32.37, 2.31, -25.58)",
                "Rotation": "(0.00, 60.00, 0.00)",
                "Scale": "(0.55, 0.55, 0.55)"},
-          "SpawnPoint (3)": {
+          "SpawnPoint": {
                "Object Name": "SpawnPoint",
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(-27.20, 3.00, 33.20)",
+               "Position": "(29.10, 3.00, 31.60)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 0.00, 0.00)"},
+          "SpawnPoint (1)": {
+               "Object Name": "SpawnPoint",
+               "Mesh Name": "Unknown ProBuilderMesh",
+               "Position": "(29.50, 3.00, -30.60)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.00, 0.00, 0.00)"},
           "SpawnPoint (2)": {
@@ -43,12 +31,24 @@
                "Position": "(0.32, 2.69, 10.91)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.76, 0.07, 0.76)"},
-          "SpawnPoint (1)": {
-               "Object Name": "SpawnPoint",
-               "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(29.50, 3.00, -30.60)",
-               "Rotation": "(0.00, 0.00, 0.00)",
-               "Scale": "(0.00, 0.00, 0.00)"},
+          "Shed 2": {
+               "Object Name": "Shed",
+               "Mesh Name": "ShedCorner 1.obj",
+               "Position": "(34.93, 2.31, -23.15)",
+               "Rotation": "(0.00, 315.00, 0.00)",
+               "Scale": "(0.55, 0.55, 0.55)"},
+          "Shed 3": {
+               "Object Name": "Shed",
+               "Mesh Name": "ShedCorner 1.obj",
+               "Position": "(34.34, 2.31, 46.17)",
+               "Rotation": "(0.00, 60.00, 0.00)",
+               "Scale": "(0.55, 0.55, 0.55)"},
+          "Shed 4": {
+               "Object Name": "Shed",
+               "Mesh Name": "ShedCorner 1.obj",
+               "Position": "(-34.16, 2.31, 46.07)",
+               "Rotation": "(0.00, 315.00, 0.00)",
+               "Scale": "(0.55, 0.55, 0.55)"},
           "Cannon": {
                "Object Name": "Cannon",
                "Mesh Name": "Cannon.obj",
@@ -67,10 +67,10 @@
                "Position": "(0.00, 21.74, -47.55)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(1.20, 1.80, 1.20)"},
-          "SpawnPoint": {
+          "SpawnPoint (3)": {
                "Object Name": "SpawnPoint",
                "Mesh Name": "Unknown ProBuilderMesh",
-               "Position": "(29.10, 3.00, 31.60)",
+               "Position": "(-27.20, 3.00, 33.20)",
                "Rotation": "(0.00, 0.00, 0.00)",
                "Scale": "(0.00, 0.00, 0.00)"},
           "Balcony": {
