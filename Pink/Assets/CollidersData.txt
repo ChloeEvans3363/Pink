@@ -1,6 +1,106 @@
  {
      "version": 4,
      "colliders": {
+          "PS5SiloCollider19": {
+               "Object Name": "PS5SiloCollider19",
+               "Position": "(-17.96, 30.80, 2.75)",
+               "Rotation": "(0.00, 336.50, 0.00)",
+               "Scale": "(0.00, 57.00, 8.00)"},
+          "PS5SiloCollider18": {
+               "Object Name": "PS5SiloCollider18",
+               "Position": "(-13.98, 53.34, -4.24)",
+               "Rotation": "(0.00, 315.00, 0.00)",
+               "Scale": "(0.00, 12.00, 8.00)"},
+          "PS5SiloCollider17": {
+               "Object Name": "PS5SiloCollider17",
+               "Position": "(-13.92, 17.80, -4.28)",
+               "Rotation": "(0.00, 315.00, 0.00)",
+               "Scale": "(0.00, 34.00, 8.00)"},
+          "PS5SiloCollider16": {
+               "Object Name": "PS5SiloCollider16",
+               "Position": "(-7.53, 30.80, -8.44)",
+               "Rotation": "(0.00, 292.50, 0.00)",
+               "Scale": "(0.00, 56.00, 8.00)"},
+          "PS5SiloCollider15": {
+               "Object Name": "PS5SiloCollider15",
+               "Position": "(-0.06, 34.80, -9.95)",
+               "Rotation": "(0.00, 270.00, 0.00)",
+               "Scale": "(0.00, 48.00, 8.00)"},
+          "PS5SiloCollider14": {
+               "Object Name": "PS5SiloCollider14",
+               "Position": "(7.24, 30.80, -7.85)",
+               "Rotation": "(0.00, 246.50, 0.00)",
+               "Scale": "(0.00, 57.00, 8.00)"},
+          "PS5SiloCollider13": {
+               "Object Name": "PS5SiloCollider13",
+               "Position": "(14.23, 53.34, -3.87)",
+               "Rotation": "(0.00, 225.00, 0.00)",
+               "Scale": "(0.00, 12.00, 8.00)"},
+          "PS5SiloCollider12": {
+               "Object Name": "PS5SiloCollider12",
+               "Position": "(14.27, 17.80, -3.81)",
+               "Rotation": "(0.00, 225.00, 0.00)",
+               "Scale": "(0.00, 34.00, 8.00)"},
+          "PS5SiloCollider11": {
+               "Object Name": "PS5SiloCollider11",
+               "Position": "(18.43, 30.80, 2.58)",
+               "Rotation": "(0.00, 202.50, 0.00)",
+               "Scale": "(0.00, 56.00, 8.00)"},
+          "PS5SiloCollider10": {
+               "Object Name": "PS5SiloCollider10",
+               "Position": "(19.94, 34.80, 10.05)",
+               "Rotation": "(0.00, 180.00, 0.00)",
+               "Scale": "(0.00, 48.00, 8.00)"},
+          "PS5SiloCollider9": {
+               "Object Name": "PS5SiloCollider9",
+               "Position": "(17.84, 30.80, 17.35)",
+               "Rotation": "(0.00, 156.50, 0.00)",
+               "Scale": "(0.00, 57.00, 8.00)"},
+          "PS5SiloCollider8": {
+               "Object Name": "PS5SiloCollider8",
+               "Position": "(13.86, 53.34, 24.34)",
+               "Rotation": "(0.00, 135.00, 0.00)",
+               "Scale": "(0.00, 12.00, 8.00)"},
+          "PS5SiloCollider7": {
+               "Object Name": "PS5SiloCollider7",
+               "Position": "(13.80, 17.80, 24.38)",
+               "Rotation": "(0.00, 135.00, 0.00)",
+               "Scale": "(0.00, 34.00, 8.00)"},
+          "PS5SiloCollider6": {
+               "Object Name": "PS5SiloCollider6",
+               "Position": "(7.41, 30.80, 28.54)",
+               "Rotation": "(0.00, 112.50, 0.00)",
+               "Scale": "(0.00, 56.00, 8.00)"},
+          "PS5SiloCollider5": {
+               "Object Name": "PS5SiloCollider5",
+               "Position": "(-0.06, 34.80, 30.05)",
+               "Rotation": "(0.00, 90.00, 0.00)",
+               "Scale": "(0.00, 48.00, 8.00)"},
+          "PS5SiloCollider3": {
+               "Object Name": "PS5SiloCollider3",
+               "Position": "(-14.35, 53.34, 23.97)",
+               "Rotation": "(0.00, 45.00, 0.00)",
+               "Scale": "(0.00, 12.00, 8.00)"},
+          "PS5SiloCollider2": {
+               "Object Name": "PS5SiloCollider2",
+               "Position": "(-14.39, 17.80, 23.91)",
+               "Rotation": "(0.00, 45.00, 0.00)",
+               "Scale": "(0.00, 34.00, 8.00)"},
+          "PS5SiloCollider4": {
+               "Object Name": "PS5SiloCollider4",
+               "Position": "(-7.36, 30.80, 27.95)",
+               "Rotation": "(0.00, 66.50, 0.00)",
+               "Scale": "(0.00, 57.00, 8.00)"},
+          "PS5SiloCollider1": {
+               "Object Name": "PS5SiloCollider1",
+               "Position": "(-18.55, 30.80, 17.52)",
+               "Rotation": "(0.00, 22.50, 0.00)",
+               "Scale": "(0.00, 56.00, 8.00)"},
+          "PS5SiloCollider": {
+               "Object Name": "PS5SiloCollider",
+               "Position": "(-20.06, 34.80, 10.05)",
+               "Rotation": "(0.00, 0.00, 0.00)",
+               "Scale": "(0.00, 48.00, 8.00)"},
           "JumpPad": {
                "Object Name": "JumpPad",
                "Position": "(0.32, 2.52, 10.54)",
