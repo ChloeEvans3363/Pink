@@ -24,7 +24,6 @@ public class PowerUpManager : MonoBehaviour
         speed,
         explosionLanding,
         tripleBarrelRocketLauncher,
-        mortarRockets,
         moonGravity,
         bigExplosion
     }
@@ -61,12 +60,6 @@ public class PowerUpManager : MonoBehaviour
                 powerUpDisplayed = "Triple Barrel";
                 foreach (Player player in players)
                     player.shootAction += TripleAttack;
-                break;
-
-            case PowerUp.mortarRockets:
-                powerUpDisplayed = "Mortar Rockets";
-                foreach (Player player in players)
-                    player.GetComponent<Player>().IsLobShot = true;
                 break;
 
             case PowerUp.moonGravity:
