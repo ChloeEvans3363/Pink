@@ -45,6 +45,10 @@ public class GameManger : MonoBehaviour
 
     public void PowerUpCheck()
     {
-        PowerUpManager.Instance.ActivateRandomPowerUp(players);
+        if (totalScore % powerUpThreshold == 0 && activePowerUps < powerUpThreshold)
+        {
+            PowerUpManager.Instance.ActivateRandomPowerUp(players);
+            activePowerUps++;
+        }
     }
 }
