@@ -29,7 +29,9 @@ public class Player : MonoBehaviour
     // Gravity and Jumping
     [SerializeField] private LayerMask groundLayers;
     private float groundRaidus = 0.24f;
-    private float groundedOffset = 1.8f;
+    private float headRaidus = 0.24f;
+    private float groundedOffset = 2f;
+    private float ceilingOffset = 1.8f;
     private bool grounded;
     private bool playerHitHead;
     private bool jumped = false;
@@ -346,10 +348,10 @@ public class Player : MonoBehaviour
 
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
 
-        spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y + groundedOffset,
+        spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y + ceilingOffset,
             transform.position.z);
 
-        playerHitHead = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
+        playerHitHead = Physics.CheckSphere(spherePosition, headRaidus, groundLayers);
 
         if (grounded && land && explosionLanding)
         {
