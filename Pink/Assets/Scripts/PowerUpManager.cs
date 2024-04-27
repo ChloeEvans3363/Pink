@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -18,6 +19,8 @@ public class PowerUpManager : MonoBehaviour
 
     private Coroutine displayCoroutine; // Coroutine reference to control text display duration
 
+    // Saves the already called powerups
+    private List<PowerUp> calledPowerUps = new List<PowerUp>();
 
     public enum PowerUp
     {
@@ -27,8 +30,6 @@ public class PowerUpManager : MonoBehaviour
         moonGravity,
         bigExplosion
     }
-
-    private PowerUp previousPowerUp = (PowerUp)(-1); // The Previous Power Up Activated
 
     private void Awake()
     {
@@ -66,7 +67,7 @@ public class PowerUpManager : MonoBehaviour
                 powerUpDisplayed = "Moon Gravity";
                 foreach (Player player in players)
                 {
-                    player.Jump = 15;
+                    player.Jump = 18;
                     player.Gravity = 18;
                 }
                 break;
@@ -74,7 +75,7 @@ public class PowerUpManager : MonoBehaviour
             case PowerUp.bigExplosion:
                 powerUpDisplayed = "Big Explosion";
                 foreach (Player player in players)
-                    player.OuterRadius = 20;
+                    player.OuterRadius = 15;
                 break;
 
         }
@@ -107,24 +108,29 @@ public class PowerUpManager : MonoBehaviour
     private PowerUp GetRandomPowerUp()
     {
         Array powerUps = Enum.GetValues(typeof(PowerUp));
-        return (PowerUp)powerUps.GetValue(UnityEngine.Random.Range(0, powerUps.Length));
+        int test = UnityEngine.Random.Range(0, powerUps.Length);
+        //Debug.Log(test);
+        return (PowerUp)powerUps.GetValue(test);
     }
 
     public void ActivateRandomPowerUp(List<Player> players)
     {
-        PowerUp randomPowerUp = GetRandomPowerUp();
-
-        Debug.Log(randomPowerUp);
-
-        // Ensure the newly selected power-up is different from the previous one
-        while (randomPowerUp == previousPowerUp)
+        if (calledPowerUps.Count < Enum.GetValues(typeof(PowerUp)).Length)
         {
-            randomPowerUp = GetRandomPowerUp();
-        }
+            PowerUp randomPowerUp = GetRandomPowerUp();
 
-        // Activate the randomly selected power-up
-        ActivatePowerUp(randomPowerUp, players);
-        previousPowerUp = randomPowerUp;
+            //Debug.Log(randomPowerUp);
+
+            // Ensure the newly selected power-up is different from the previous one
+            while (calledPowerUps.Contains(randomPowerUp))
+            {
+                randomPowerUp = GetRandomPowerUp();
+            }
+
+            // Activate the randomly selected power-up
+            ActivatePowerUp(randomPowerUp, players);
+            calledPowerUps.Add(randomPowerUp);
+        }
     }
 
     private IEnumerator ClearPowerUpText()
