@@ -99,6 +99,8 @@ MonoBehaviour:
   respawnTime: 3
   gameTimer: {fileID: 1018332143321287422}
   pauseScreen: {fileID: 861227831923452441}
+  transition: {fileID: 11400000, guid: b577ec7af0d48c34a9d31ce17f830a8d, type: 2}
+  transitionDelay: 0.2
 --- !u!114 &942493651985967002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +576,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6349546250622227739}
     m_Modifications:
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8690846478744644694}
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitMatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 379114627327570499, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 749430753818298852, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
       propertyPath: m_Name
       value: PlayerUI
@@ -585,6 +607,26 @@ PrefabInstance:
     - target: {fileID: 3663212291940810620, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
       propertyPath: m_PlaneDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8690846478744644694}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeMatch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340384376376975667, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6718955907731089456, guid: 949c26ed592b23a4b9deb20fc56666fc, type: 3}
       propertyPath: m_Color.a

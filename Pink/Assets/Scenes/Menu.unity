@@ -1697,6 +1697,7 @@ MonoBehaviour:
   currentMenu: {fileID: 648957937}
   transition: {fileID: 11400000, guid: b577ec7af0d48c34a9d31ce17f830a8d, type: 2}
   startDelay: 0.2
+  startingButton: {fileID: 1795656063}
 --- !u!1 &1621920501
 GameObject:
   m_ObjectHideFlags: 0

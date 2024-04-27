@@ -9,6 +9,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using EasyTransition;
 
 public class Player : MonoBehaviour
 {
@@ -82,6 +83,8 @@ public class Player : MonoBehaviour
     private bool gamePaused = false;
     private bool prevPauseState = false;
     [SerializeField] private GameObject pauseScreen;
+    public TransitionSettings transition;
+    public float transitionDelay = 0.2f;
 
     // Powerups
     private bool explosionLanding = false;
@@ -599,6 +602,7 @@ public class Player : MonoBehaviour
     public void ExitMatch()
     {
         SceneManager.LoadScene("Menu");
+        //TransitionManager.Instance().Transition("Menu", transition, transitionDelay);
     }
 
     public void AddScore()

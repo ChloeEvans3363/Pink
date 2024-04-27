@@ -99,6 +99,8 @@ MonoBehaviour:
   respawnTime: 3
   gameTimer: {fileID: 3724642961881632353}
   pauseScreen: {fileID: 3918961378137747078}
+  transition: {fileID: 11400000, guid: b577ec7af0d48c34a9d31ce17f830a8d, type: 2}
+  transitionDelay: 0.2
 --- !u!114 &942493651985967002
 MonoBehaviour:
   m_ObjectHideFlags: 0

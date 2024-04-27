@@ -12,6 +12,15 @@ public class MainMenu : MonoBehaviour
     public GameObject currentMenu;
     public TransitionSettings transition;
     public float startDelay = 0.2f;
+    public GameObject startingButton;
+
+    public void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        // Set focus to first button found
+        EventSystem.current.SetSelectedGameObject(startingButton);
+    }
 
     public void OpenMenu(GameObject loadMenu)
     {
@@ -32,7 +41,8 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        TransitionManager.Instance().Transition(sceneName, transition, startDelay);
+        SceneManager.LoadScene(sceneName);
+        //TransitionManager.Instance().Transition(sceneName, transition, startDelay);
     }
 
     public void Quit()
