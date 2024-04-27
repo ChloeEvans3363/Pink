@@ -74,7 +74,7 @@ public class PowerUpManager : MonoBehaviour
                 foreach (Player player in players)
                 {
                     player.Jump = 15;
-                    player.Gravity = 10;
+                    player.Gravity = 18;
                 }
                 break;
 
