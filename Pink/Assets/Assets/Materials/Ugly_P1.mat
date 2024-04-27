@@ -107,7 +107,7 @@ Material:
     - _OcclusionStrength: 1
     - _Offset: 0.28
     - _OtlWidth: 5
-    - _OutlineWidth: 1.5
+    - _OutlineWidth: 0.6
     - _PaintbrushStrokesAngle: 118
     - _PaintbrushStrokesSize: 6.2
     - _Parallax: 0.02
