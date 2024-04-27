@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     private float groundRaidus = 0.24f;
     private float groundedOffset = 1.8f;
     private bool grounded;
+    private bool playerHitHead;
     private bool jumped = false;
     private float airControl = 16f;
     private float airForwardAcceleration = 8f;
@@ -345,6 +346,11 @@ public class Player : MonoBehaviour
 
         grounded = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
 
+        spherePosition = new UnityEngine.Vector3(transform.position.x, transform.position.y + groundedOffset,
+            transform.position.z);
+
+        playerHitHead = Physics.CheckSphere(spherePosition, groundRaidus, groundLayers);
+
         if (grounded && land && explosionLanding)
         {
             land = false;
@@ -395,6 +401,11 @@ public class Player : MonoBehaviour
 
             velocity += UnityEngine.Vector3.down * (gravity * time);
             land = true;
+        }
+
+        if (playerHitHead && velocity.y > 0)
+        {
+            velocity.y = 0;
         }
     }
 
