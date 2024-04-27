@@ -2010,6 +2010,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 2.04
       objectReference: {fileID: 0}
+    - target: {fileID: 5777077866526790385, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6349546250622227739, guid: c34e7acaa47c4b040a7dc1ea5ac91970, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
