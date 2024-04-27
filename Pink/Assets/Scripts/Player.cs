@@ -601,6 +601,9 @@ public class Player : MonoBehaviour
     }
     public void ExitMatch()
     {
+        gamePaused = false;
+        // UnPaused Game
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
         //TransitionManager.Instance().Transition("Menu", transition, transitionDelay);
     }
